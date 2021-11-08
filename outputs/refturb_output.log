@@ -1,0 +1,27 @@
+P51805 2021-11-04 11:32:21,438 runWISDEM:run_wisdem:85 INFO:Started
+P51805 2021-11-04 11:32:23,062 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 4
+P51805 2021-11-04 11:32:23,068 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 5
+P51805 2021-11-04 11:32:23,072 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 6
+P51805 2021-11-04 11:32:23,076 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 7
+P51805 2021-11-04 11:32:23,080 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 8
+P51805 2021-11-04 11:32:23,084 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 9
+P51805 2021-11-04 11:32:23,088 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 10
+P51805 2021-11-04 11:32:23,091 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 11
+P51805 2021-11-04 11:32:23,095 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 12
+P51805 2021-11-04 11:32:23,099 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 13
+P51805 2021-11-04 11:32:23,103 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 14
+P51805 2021-11-04 11:32:23,107 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 15
+P51805 2021-11-04 11:32:23,111 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 16
+P51805 2021-11-04 11:32:23,115 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 17
+P51805 2021-11-04 11:32:23,119 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 18
+P51805 2021-11-04 11:32:23,123 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 19
+P51805 2021-11-04 11:32:23,127 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 20
+P51805 2021-11-04 11:32:23,131 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 21
+P51805 2021-11-04 11:32:23,135 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 22
+P51805 2021-11-04 11:32:23,139 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 23
+P51805 2021-11-04 11:32:23,143 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 24
+P51805 2021-11-04 11:32:23,147 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 25
+P51805 2021-11-04 11:32:23,151 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 26
+P51805 2021-11-04 11:32:23,156 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 27
+P51805 2021-11-04 11:32:23,160 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 28
+P51805 2021-11-04 11:32:23,164 gc_WT_DataStruc:compute:3025 INFO:3D correction applied to airfoil polars for section 29

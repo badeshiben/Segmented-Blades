@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="458e8864-9f62-47f4-8041-8d8917031b91" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1wJbXVU50YhUAB2RIbrm93PNNmy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/BAR3_template" />
+      <recent name="$PROJECT_DIR$/BAR_USC_template" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.GenerateInputs">
+    <configuration name="GenerateInputs" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Segmented Blade" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/opt/anaconda3/envs/env/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GenerateInputs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PostPro" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Segmented Blade" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/opt/anaconda3/envs/env/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PostPro.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="create_studies" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Segmented Blade" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/opt/anaconda3/envs/env/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_studies.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="joint_model" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Segmented Blade" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/opt/anaconda3/envs/hybrid_systems/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/joint_model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="joint_model_compatible" type="PythonConfigurationType" factoryName="Python">
+      <module name="Segmented Blade" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/opt/anaconda3/envs/weis-env/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/joint_model_compatible.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="paraboloid_min" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Segmented Blade" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/paraboloid_min.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.GenerateInputs" />
+      <item itemvalue="Python.PostPro" />
+      <item itemvalue="Python.create_studies" />
+      <item itemvalue="Python.joint_model_compatible" />
+      <item itemvalue="Python.joint_model" />
+      <item itemvalue="Python.paraboloid_min" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.paraboloid_min" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="458e8864-9f62-47f4-8041-8d8917031b91" name="Default Changelist" comment="" />
+      <created>1628179678068</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1628179678068</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1496" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1636383336981">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="424" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1636138853425" />
+    <state x="-1496" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636383336981" />
+    <state x="424" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1629382964382" />
+    <state x="-1243" y="161" key="#paraboloid_min" timestamp="1636050318571">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1243" y="161" key="#paraboloid_min/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636050318571" />
+    <state width="1876" height="173" key="GridCell.Tab.0.bottom" timestamp="1636397480165">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="238" key="GridCell.Tab.0.bottom/-1680.1080.1680.1050/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1629905543437" />
+    <state width="1876" height="298" key="GridCell.Tab.0.bottom/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1636131241824" />
+    <state width="1876" height="298" key="GridCell.Tab.0.bottom/-1920.0.1920.1080/0.23.1920.1057@-1920.0.1920.1080" timestamp="1636144874297" />
+    <state width="1876" height="192" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1920.0.1920.1080/-1680.1080.1680.1050@-1920.0.1920.1080" timestamp="1636392663476" />
+    <state width="1876" height="173" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636397480165" />
+    <state width="1876" height="201" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1631548807618" />
+    <state width="1876" height="460" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1920.23.1920.1057@0.0.1920.1080" timestamp="1629466274695" />
+    <state width="1876" height="298" key="GridCell.Tab.0.bottom/0.23.1920.1057/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636385490962" />
+    <state width="1876" height="236" key="GridCell.Tab.0.bottom/0.23.1920.1057/-1920.23.1920.1057@0.23.1920.1057" timestamp="1631568436934" />
+    <state width="1876" height="173" key="GridCell.Tab.0.center" timestamp="1636397480163">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="238" key="GridCell.Tab.0.center/-1680.1080.1680.1050/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1629905543435" />
+    <state width="1876" height="298" key="GridCell.Tab.0.center/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1636131241823" />
+    <state width="1876" height="298" key="GridCell.Tab.0.center/-1920.0.1920.1080/0.23.1920.1057@-1920.0.1920.1080" timestamp="1636144874296" />
+    <state width="1876" height="192" key="GridCell.Tab.0.center/0.0.1920.1080/-1920.0.1920.1080/-1680.1080.1680.1050@-1920.0.1920.1080" timestamp="1636392663474" />
+    <state width="1876" height="173" key="GridCell.Tab.0.center/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636397480163" />
+    <state width="1876" height="201" key="GridCell.Tab.0.center/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1631548807616" />
+    <state width="1876" height="460" key="GridCell.Tab.0.center/0.0.1920.1080/-1920.23.1920.1057@0.0.1920.1080" timestamp="1629466274694" />
+    <state width="1876" height="298" key="GridCell.Tab.0.center/0.23.1920.1057/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636385490961" />
+    <state width="1876" height="236" key="GridCell.Tab.0.center/0.23.1920.1057/-1920.23.1920.1057@0.23.1920.1057" timestamp="1631568436931" />
+    <state width="1876" height="173" key="GridCell.Tab.0.left" timestamp="1636397480162">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="238" key="GridCell.Tab.0.left/-1680.1080.1680.1050/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1629905543433" />
+    <state width="1876" height="298" key="GridCell.Tab.0.left/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1636131241822" />
+    <state width="1876" height="298" key="GridCell.Tab.0.left/-1920.0.1920.1080/0.23.1920.1057@-1920.0.1920.1080" timestamp="1636144874295" />
+    <state width="1876" height="192" key="GridCell.Tab.0.left/0.0.1920.1080/-1920.0.1920.1080/-1680.1080.1680.1050@-1920.0.1920.1080" timestamp="1636392663472" />
+    <state width="1876" height="173" key="GridCell.Tab.0.left/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636397480162" />
+    <state width="1876" height="201" key="GridCell.Tab.0.left/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1631548807614" />
+    <state width="1876" height="460" key="GridCell.Tab.0.left/0.0.1920.1080/-1920.23.1920.1057@0.0.1920.1080" timestamp="1629466274694" />
+    <state width="1876" height="298" key="GridCell.Tab.0.left/0.23.1920.1057/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636385490960" />
+    <state width="1876" height="236" key="GridCell.Tab.0.left/0.23.1920.1057/-1920.23.1920.1057@0.23.1920.1057" timestamp="1631568436930" />
+    <state width="1876" height="173" key="GridCell.Tab.0.right" timestamp="1636397480164">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="238" key="GridCell.Tab.0.right/-1680.1080.1680.1050/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1629905543436" />
+    <state width="1876" height="298" key="GridCell.Tab.0.right/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1636131241823" />
+    <state width="1876" height="298" key="GridCell.Tab.0.right/-1920.0.1920.1080/0.23.1920.1057@-1920.0.1920.1080" timestamp="1636144874296" />
+    <state width="1876" height="192" key="GridCell.Tab.0.right/0.0.1920.1080/-1920.0.1920.1080/-1680.1080.1680.1050@-1920.0.1920.1080" timestamp="1636392663475" />
+    <state width="1876" height="173" key="GridCell.Tab.0.right/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636397480164" />
+    <state width="1876" height="201" key="GridCell.Tab.0.right/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1631548807617" />
+    <state width="1876" height="460" key="GridCell.Tab.0.right/0.0.1920.1080/-1920.23.1920.1057@0.0.1920.1080" timestamp="1629466274695" />
+    <state width="1876" height="298" key="GridCell.Tab.0.right/0.23.1920.1057/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636385490961" />
+    <state width="1876" height="236" key="GridCell.Tab.0.right/0.23.1920.1057/-1920.23.1920.1057@0.23.1920.1057" timestamp="1631568436932" />
+    <state width="1876" height="192" key="GridCell.Tab.1.bottom" timestamp="1636397478561">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="298" key="GridCell.Tab.1.bottom/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1636131241826" />
+    <state width="1876" height="298" key="GridCell.Tab.1.bottom/-1920.0.1920.1080/0.23.1920.1057@-1920.0.1920.1080" timestamp="1636144874299" />
+    <state width="1876" height="192" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1920.0.1920.1080/-1680.1080.1680.1050@-1920.0.1920.1080" timestamp="1636392663482" />
+    <state width="1876" height="192" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636397478561" />
+    <state width="1876" height="201" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1630338048980" />
+    <state width="1876" height="460" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1920.23.1920.1057@0.0.1920.1080" timestamp="1629466274698" />
+    <state width="1876" height="298" key="GridCell.Tab.1.bottom/0.23.1920.1057/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636385492077" />
+    <state width="1876" height="201" key="GridCell.Tab.1.bottom/0.23.1920.1057/-1920.23.1920.1057@0.23.1920.1057" timestamp="1630361311911" />
+    <state width="1876" height="192" key="GridCell.Tab.1.center" timestamp="1636397478559">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="298" key="GridCell.Tab.1.center/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1636131241825" />
+    <state width="1876" height="298" key="GridCell.Tab.1.center/-1920.0.1920.1080/0.23.1920.1057@-1920.0.1920.1080" timestamp="1636144874298" />
+    <state width="1876" height="192" key="GridCell.Tab.1.center/0.0.1920.1080/-1920.0.1920.1080/-1680.1080.1680.1050@-1920.0.1920.1080" timestamp="1636392663479" />
+    <state width="1876" height="192" key="GridCell.Tab.1.center/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636397478559" />
+    <state width="1876" height="201" key="GridCell.Tab.1.center/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1630338048978" />
+    <state width="1876" height="460" key="GridCell.Tab.1.center/0.0.1920.1080/-1920.23.1920.1057@0.0.1920.1080" timestamp="1629466274696" />
+    <state width="1876" height="298" key="GridCell.Tab.1.center/0.23.1920.1057/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636385492075" />
+    <state width="1876" height="201" key="GridCell.Tab.1.center/0.23.1920.1057/-1920.23.1920.1057@0.23.1920.1057" timestamp="1630361311909" />
+    <state width="1876" height="192" key="GridCell.Tab.1.left" timestamp="1636397478558">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="298" key="GridCell.Tab.1.left/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1636131241824" />
+    <state width="1876" height="298" key="GridCell.Tab.1.left/-1920.0.1920.1080/0.23.1920.1057@-1920.0.1920.1080" timestamp="1636144874297" />
+    <state width="1876" height="192" key="GridCell.Tab.1.left/0.0.1920.1080/-1920.0.1920.1080/-1680.1080.1680.1050@-1920.0.1920.1080" timestamp="1636392663477" />
+    <state width="1876" height="192" key="GridCell.Tab.1.left/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636397478558" />
+    <state width="1876" height="201" key="GridCell.Tab.1.left/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1630338048977" />
+    <state width="1876" height="460" key="GridCell.Tab.1.left/0.0.1920.1080/-1920.23.1920.1057@0.0.1920.1080" timestamp="1629466274696" />
+    <state width="1876" height="298" key="GridCell.Tab.1.left/0.23.1920.1057/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636385492075" />
+    <state width="1876" height="201" key="GridCell.Tab.1.left/0.23.1920.1057/-1920.23.1920.1057@0.23.1920.1057" timestamp="1630361311908" />
+    <state width="1876" height="192" key="GridCell.Tab.1.right" timestamp="1636397478560">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1876" height="298" key="GridCell.Tab.1.right/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1636131241826" />
+    <state width="1876" height="298" key="GridCell.Tab.1.right/-1920.0.1920.1080/0.23.1920.1057@-1920.0.1920.1080" timestamp="1636144874299" />
+    <state width="1876" height="192" key="GridCell.Tab.1.right/0.0.1920.1080/-1920.0.1920.1080/-1680.1080.1680.1050@-1920.0.1920.1080" timestamp="1636392663479" />
+    <state width="1876" height="192" key="GridCell.Tab.1.right/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636397478560" />
+    <state width="1876" height="201" key="GridCell.Tab.1.right/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1630338048979" />
+    <state width="1876" height="460" key="GridCell.Tab.1.right/0.0.1920.1080/-1920.23.1920.1057@0.0.1920.1080" timestamp="1629466274697" />
+    <state width="1876" height="298" key="GridCell.Tab.1.right/0.23.1920.1057/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636385492076" />
+    <state width="1876" height="201" key="GridCell.Tab.1.right/0.23.1920.1057/-1920.23.1920.1057@0.23.1920.1057" timestamp="1630361311910" />
+    <state width="960" height="540" key="XDebugger.FullValuePopup" timestamp="1636389895548">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="960" height="540" key="XDebugger.FullValuePopup/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636389895548" />
+    <state width="960" height="540" key="XDebugger.FullValuePopup/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1628892968694" />
+    <state x="-1267" y="387" key="com.intellij.ide.util.TipDialog" timestamp="1636377942777">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="653" y="372" key="com.intellij.ide.util.TipDialog/-1680.1103.1680.1027/0.0.1920.1080/-1920.23.1920.1057@0.0.1920.1080" timestamp="1630432166586" />
+    <state x="-1267" y="387" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636377942777" />
+    <state x="653" y="387" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1631541195265" />
+    <state x="-1267" y="372" key="com.intellij.ide.util.TipDialog/0.23.1920.1057/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1629814519073" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/weio/FASTInFile.py</url>
+          <line>432</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/weio/FASTInFile.py</url>
+          <line>565</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/weio/FASTInFile.py</url>
+          <line>433</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/weio/FASTInFile.py</url>
+          <line>434</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/weio/FASTInFile.py</url>
+          <line>442</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/weio/FASTInFile.py</url>
+          <line>443</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/weio/FASTInFile.py</url>
+          <line>451</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/joint_model_w_commented_code.py</url>
+          <line>183</line>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/joint_model.py</url>
+          <line>117</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/joint_model.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/joint_model_compatible.py</url>
+          <line>110</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

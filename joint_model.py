@@ -6,26 +6,26 @@ joint location
 joint type
 ############### SET INPUT PARAMETERS #######################"""
 # safety factors
-nprf = 1.2  # bolt static safety factor (proof) [-]. If this is too high, it seriously constrains the design. Keep it low, <= 1.2
-ny   = 2    # insert static safety factor (yield) [-]
+nprf = 1.9  # bolt static safety factor (proof) [-]. If this is too high, it seriously constrains the design. Keep it low, <= 1.2
+ny   = 1.2    # insert static safety factor (yield) [-]
 nf   = 2    # fatigue safety factor [-]
 n0   = 1.2    # separation safety factor [-]. If this is too high, it seriously constrains the design. Keep it low, <= 1.2
 ns   = 2    # shear safety factor [-]
 # nDLC61 = 1.35  # DLC 6.1 load safety factor [-]
 
-# M48 10.9 bolt properties (Shigley p.433) # kf = 3  # metric 10.9, rolled thread.
+# M36 10.9 bolt properties (Shigley p.433) # kf = 3  # metric 10.9, rolled thread.
 Sp_bolt = 830e6   # Pa
 Sy_bolt = 940e6   # Pa
 Su_bolt = 1040e6  # Pa
 Se_bolt = 162e6   # Pa (for M1.6-36). Fully corrected so don't need kf
 E_bolt  = 200e9   # Pa (medium carbon steel...)
-d_bolt  = 0.048  # m
+d_bolt  = 0.036  # m
 L_bolt  = 1  # m Assume a certain value...run some cases to figure out what is reasonable
 Ad      = np.pi * d_bolt ** 2 / 4  # m2
-At      = 1470 / 1e6  # m2
+At      = 817 / 1e6  # m2 (1470 for M48)
 Ld      = L_bolt * 0.75
 Lt      = L_bolt - Ld
-m_bolt  = 15.15  # kg, bolt+washer, https://www.portlandbolt.com/technical/tools/bolt-weight-calculator/
+m_bolt  = 8.3461  # kg, bolt+washer, https://www.portlandbolt.com/technical/tools/bolt-weight-calculator/ (15.15 for M48)
 n_bolt  = -2  # initialized
 n_bolt_prev = -1  # initialized
 
@@ -160,7 +160,9 @@ while n_bolt != n_bolt_prev:  # find a way to break out of a Fi-change-loop
         print('Solution oscillating between bolt numbers. Choosing the maximum of these.')
         seq = itermax
         for x in range(2, itermax//2):
-            if n_bolt_list[0:x] == n_bolt_list[x:2*x]:
+            s1 = n_bolt_list[-x:]
+            s2 = n_bolt_list[-2*x:-x]
+            if n_bolt_list[-x:] == n_bolt_list[-2*x:-x]:
                 seq = x
         n_bolt = max(n_bolt_list[-seq:])
     if n_bolt > n_bolt_max:

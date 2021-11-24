@@ -338,22 +338,22 @@ class JointSizing(om.ExplicitComponent):
 
 if __name__ == "__main__":
 
-    test_dict = {'density_insert': 7800, # rotorse.rc.rho[INDEX] # There are names. Use them to find the right index I guess. why no materials.rho?
+    test_dict = {'density_insert': 7800, # materials.rho[INDEX] rotorse.rc.rho[INDEX] # There are names. Use them to find the right index I guess. why no materials.rho[INDEX]? wt_init has all material data.
                  'Sy_insert': 1650e6,    # materials.Xt[INDEX]...what about materials.sigma_y?xu
                  'Su_insert': 1790e6,    # drivese.Xy_mat (maybe????)
                  'Se_insert': 316e6,   # not defined in YAML
                  'E_insert': 210e9,   # materials.E[INDEX]
-                 'Ss_sparcap': 30170000,  # why no materials.Xs?
+                 'Ss_sparcap': 30170000,  # why no materials.S?
                  'density_sparcap': 1600,  # rotorse.rc.rho[INDEX] # There are names. Use them to find the right index I guess. why no materials.rho?
                  'spar_cap_height': 0.6,  # would need WISDEM to calculate
-                 'chord_length': 3,       # would need WISDEM to calculate
+                 'chord_length': 3,       # rotorse.chord? or would need WISDEM to calculate
                  'spar_cap_ss_width': 0.8,  #rotorse.rs.brs.layer_end_nd[sparcap_SS_layer_#][station]-rotorse.rs.brs.layer_start_nd[sparcap_SS_layer_#][station]. Index Reversed? Need to calculate length from arc coordinates. May need WISDEM to calculate.
                  'spar_cap_ss_thickness': 0.02258, # rotorse.rs.brs.layer_thickness[sparcap_SS_layer_#][station]. Index Reversed? How is this reduced to one value? Otherwise probably need WISDEM to calculate
-                 'segment_length': 3.54573,  # station differences in yaml?
+                 'segment_length': 3.54573,  # station differences in yaml? RotorSE has n_span field...maybe divide rotorse.r by it
                  'blade_station': 0.69,      # input from user? Choose from yaml? eventually from WISDEM if opt location.
-                 'Mflap_ult': 1.64e6,  # WISDEM calculates
+                 'Mflap_ult': 1.64e6,  # WISDEM calculates M1
                  'Fflap_ult': 1.5e5,   # WISDEM calculates
-                 'Medge_ult': 3.1e5    # WISDEM calculates
+                 'Medge_ult': 3.1e5    # WISDEM calculates M2  wt.wt_init.materials.materials_indep_vars.Xt Shear strength appears to be absent.
                  }
 
     model = om.Group()

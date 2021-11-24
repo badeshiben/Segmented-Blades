@@ -67,7 +67,7 @@ for i in range(0, num):
 x = EDmat1[:, :, 0]
 y = BDmat1[:, :, 0]
 
-study1 = {'EDmat': EDmat1, 'BDmat': BDmat1, 'case': 'mass', 'multipliers': mult, 'num': num}
+study1 = {'EDmat': EDmat1, 'BDmat': BDmat1, 'parameter': 'mass', 'multipliers': mult, 'num': num}
 
 """Study 2: inertia sensitivity    """
 num = 10
@@ -109,7 +109,7 @@ for i in range(0, num):
 x = EDmat2[:, :, 0]
 y = BDmat2[:, :, 0]
 
-study2 = {'EDmat': EDmat2, 'BDmat': BDmat2, 'case': 'inertia', 'multipliers': mult, 'num': num}
+study2 = {'EDmat': EDmat2, 'BDmat': BDmat2, 'parameter': 'inertia', 'multipliers': mult, 'num': num}
 
 """Study 3: stiffness sensitivity    """
 num = 10
@@ -151,7 +151,7 @@ for i in range(0, num):
 x = EDmat3[:, :, 0]
 y = BDmat3[:, :, 0]
 
-study3 = {'EDmat': EDmat3, 'BDmat': BDmat3, 'case': 'stiffness', 'multipliers': mult, 'num': num}
+study3 = {'EDmat': EDmat3, 'BDmat': BDmat3, 'parameter': 'stiffness', 'multipliers': mult, 'num': num}
 
  # K_ShrFlp = 1
  # K_ShrEdg = 1

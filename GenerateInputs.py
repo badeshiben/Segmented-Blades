@@ -108,7 +108,7 @@ if __name__=='__main__':
     ref_dir          = 'BAR_USC_template/'  # Folder where the fast input files are located (will be copied)
     main_file        = 'BAR_USC.fst'    # Main file in ref_dir, used as a template
     work_dir         = 'BAR_USC_inputs/'+study['case']+'/'          # Output folder (will be created)
-    FAST_EXE = '/home/banderso2/openfast/build/glue-codes/openfast/openfast'
+    FAST_EXE = '/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast'
     npf = 1  # number of FAST runs per submission script
     # --- Generate inputs files
     fastfiles = genericStudy(study, ref_dir, work_dir, main_file)

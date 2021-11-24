@@ -1,54 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="458e8864-9f62-47f4-8041-8d8917031b91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateInputs.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateInputs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PostPro.py" beforeDir="false" afterPath="$PROJECT_DIR$/PostPro.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_studies.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_studies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/joint_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/joint_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/joint_model_compatible.py" beforeDir="false" afterPath="$PROJECT_DIR$/joint_model_compatible.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/af_efficiency.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/aoa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/chord.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/cm_aero.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/cp_aero.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/cp_elec.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/cq_aero.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/ct_aero.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/drag_coeff.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/edge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/flap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/induction.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/lcoe.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/lift_coeff.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/mass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/moment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/omega.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/pitch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/power_aero.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/power_elec.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/prebend.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/r_thick.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/refturb_output.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/refturb_output.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/refturb_output.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/refturb_output.npz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/refturb_output.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/refturb_output.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/sc_opt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/skin_opt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/sweep.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/te_opt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/thrust.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/torque.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/torsion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/tower_geometry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/twist_opt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/~$refturb_output.xlsx" beforeDir="false" />
-    </list>
+    <list default="true" id="458e8864-9f62-47f4-8041-8d8917031b91" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="458e8864-9f62-47f4-8041-8d8917031b91" name="Default Changelist" comment="" />
+    <list default="true" id="458e8864-9f62-47f4-8041-8d8917031b91" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/BAR_USC_template/BAR_USC_ServoDyn_ORIGINAL.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR_USC_template/BAR_USC_ServoDyn.dat" beforeDir="false" afterPath="$PROJECT_DIR$/BAR_USC_template/BAR_USC_ServoDyn.dat" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,17 +32,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/BAR_USC_inputs/mass" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/BAR_USC_template" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/BAR_USC_template" />
       <recent name="$PROJECT_DIR$/BAR_USC_inputs/mass" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/BAR3_template" />
-      <recent name="$PROJECT_DIR$/BAR_USC_template" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Python.joint_model">

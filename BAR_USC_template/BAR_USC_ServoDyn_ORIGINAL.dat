@@ -57,15 +57,11 @@ True                   GenTiStp    - Method to stop the generator {T: timed usin
 99999.0                TYawManS    - Time to start override yaw maneuver and end standard yaw control (s)
 0.25                   YawManRat   - Yaw maneuver rate (in absolute value) (deg/s)
 0.0                    NacYawF     - Final yaw angle for override yaw maneuvers (degrees)
----------------------- STRUCTURAL CONTROL ---------------------------------------
-0                      NumBStC    - XXX
-"none"                 BStCfiles    - XXX
-0                      NumNStC    - XXX
-"none"                 NStCfiles    - XXX
-0                      NumTStC    - XXX
-"none"                 TStCfiles    - XXX
-0                      NumSStC    - XXX
-"none"                 SStCfiles    - XX
+---------------------- TUNED MASS DAMPER ---------------------------------------
+False                  CompNTMD    - Compute nacelle tuned mass damper {true/false} (flag)
+"none"                 NTMDfile    - Name of the file for nacelle tuned mass damper (quoted string) [unused when CompNTMD is false]
+False                  CompTTMD    - Compute tower tuned mass damper {true/false} (flag)
+"none"                 TTMDfile    - Name of the file for tower tuned mass damper (quoted string) [unused when CompTTMD is false]
 ---------------------- BLADED INTERFACE ---------------------------------------- [used only with Bladed Interface]
 "libdiscon.so"         DLL_FileName - Name/location of the dynamic library {.dll [Windows] or .so [Linux]} in the Bladed-DLL format (-) [used only with Bladed Interface]
 "BAR_USC_DISCON.IN"    DLL_InFile  - Name of input file sent to the DLL (-) [used only with Bladed Interface]

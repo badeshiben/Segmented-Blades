@@ -4,7 +4,7 @@ Generated with AeroElasticSE FAST driver
 False                  Echo        - Echo input data to <RootName>.ech (flag)
 "FATAL"                AbortLevel  - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
 720.0                  TMax        - Total run time (s)
-2e-4                   DT          - Recommended module time step (s)
+0.01                   DT          - Recommended module time step (s)
 2                      InterpOrder - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
 0                      NumCrctn    - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
 99999.0                DT_UJac     - Time between calls to get Jacobians (s)
@@ -20,9 +20,9 @@ False                  Echo        - Echo input data to <RootName>.ech (flag)
 0                      CompIce     - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
 ---------------------- INPUT FILES ---------------------------------------------
 "BAR_USC_ElastoDyn.dat" EDFile      - Name of file containing ElastoDyn input parameters (quoted string)
-"BAR_USC_BeamDyn.dat"     BDBldFile(1) - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
-"BAR_USC_BeamDyn.dat"     BDBldFile(2) - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
-"BAR_USC_BeamDyn.dat"     BDBldFile(3) - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
+"BAR_USC_BeamDyn.dat"  BDBldFile(1) - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
+"BAR_USC_BeamDyn.dat"  BDBldFile(2) - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
+"BAR_USC_BeamDyn.dat"  BDBldFile(3) - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
 "BAR_USC_InflowFile.dat" InflowFile  - Name of file containing inflow wind input parameters (quoted string)
 "BAR_USC_AeroDyn15.dat" AeroFile    - Name of file containing aerodynamic input parameters (quoted string)
 "BAR_USC_ServoDyn.dat" ServoFile   - Name of file containing control and electrical-drive input parameters (quoted string)

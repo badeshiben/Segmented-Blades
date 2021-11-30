@@ -47,7 +47,7 @@ def genericStudy(study, ref_dir, work_dir, main_file):
     # --- The parameters we will change
 
     # --- Defining a "basic dictionary", all simulations will have these parameters
-    BaseDict = {'TMax': 10, 'DT': 0.01, 'DT_Out': 0.1} # NOTE: for other parametric studies these could be parameters
+    BaseDict = {'TMax': 720, 'DT': 2e-4, 'DT_Out': 0.1}  # NOTE: for other parametric studies these could be parameters
     # --- Defining the parametric study, parameters that changes (list of dictionnaries with keys as FAST parameters)
     PARAMS=[]
 

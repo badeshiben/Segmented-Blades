@@ -52,11 +52,13 @@ def genericStudy(study, ref_dir, work_dir, main_file):
     PARAMS=[]
 
     for i in range(0, study['num']):
-        ed = study['EDmat'][:,:,i]
-        bd = study['BDmat'][:,:,i]
+        ed = study['EDmat'][:, :, i]
+        bd = study['BDmat'][:, :, i]
         p = BaseDict.copy()
         p['EDFile|BldFile1|BldProp'] = study['EDmat'][:,:,i]
-        p['BDBldFile(1)|BldFile|BeamProperties'] = study['BDmat'][:,:,i]
+        p['BDBldFile(1)|BldFile|BeamProperties'] = study['BDmat'][:, :, i]
+        p['BDBldFile(2)|BldFile|BeamProperties'] = study['BDmat'][:, :, i]
+        p['BDBldFile(3)|BldFile|BeamProperties'] = study['BDmat'][:, :, i]
         p['__name__'] = study['parameter']+'{:.2f}'.format(study['values'][i])
         PARAMS.append(p)
 
@@ -104,7 +106,7 @@ def createSubmit(fastfiles, FAST_EXE, npf):
 
 if __name__=='__main__':
     # --- "Global" Parameters for this script
-    study = study4
+    study = study1
     ref_dir          = 'BAR_USC_template/'  # Folder where the fast input files are located (will be copied)
     main_file        = 'BAR_USC.fst'    # Main file in ref_dir, used as a template
     work_dir         = 'BAR_USC_inputs/'+study['parameter']+'/'          # Output folder (will be created)

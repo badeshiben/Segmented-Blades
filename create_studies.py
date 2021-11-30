@@ -62,7 +62,8 @@ for i in range(0, num):
     BDmat1[20, 65, i]  = BDmat1[20, 65, i] * ix[i]  # i_Flp
     BDmat1[20, 67, i]  = BDmat1[20, 67, i] * mx[i]  # -mYcm
     BDmat1[20, 68, i]  = BDmat1[20, 68, i] * mx[i]  # mXcm
-    BDmat1[20, 72, i]  = BDmat1[20, 72, i] * ix[i]  # i_plr
+    BDmat1[20, 72, i]  = BDmat1[20, 58, i] + BDmat1[20, 65, i]  # i_plr = i_Edg + i_Flp
+    # BDmat1[20, 72, i]  = BDmat1[20, 72, i] * ix[i]  # i_plr
 
 x = EDmat1[:, :, 0]
 y = BDmat1[:, :, 0]

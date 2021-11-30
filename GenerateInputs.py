@@ -4,7 +4,7 @@ import pandas as pd
 import fastlib
 import weio
 import pyFAST.case_generation.case_gen as case_gen
-from create_studies import study1, study2, study3
+from create_studies import study1, study2, study3, study4
 
 
 def genericStudy(study, ref_dir, work_dir, main_file):
@@ -57,7 +57,7 @@ def genericStudy(study, ref_dir, work_dir, main_file):
         p = BaseDict.copy()
         p['EDFile|BldFile1|BldProp'] = study['EDmat'][:,:,i]
         p['BDBldFile(1)|BldFile|BeamProperties'] = study['BDmat'][:,:,i]
-        p['__name__'] = study['case']+'{:.1f}'.format(study['multipliers'][i])
+        p['__name__'] = study['parameter']+'{:.2f}'.format(study['values'][i])
         PARAMS.append(p)
 
 
@@ -87,7 +87,7 @@ def createSubmit(fastfiles, FAST_EXE, npf):
         f = open(work_dir + "Submit_" + name + ".sh", "w")
         f.write('#! /bin/bash\n')
         f.write('#SBATCH --job-name=FVWcheck                     # Job name\n')
-        f.write('#SBATCH --time 8:00:00\n')
+        f.write('#SBATCH --time 16:00:00\n')
         f.write('#SBATCH -A bar\n')
         f.write('#SBATCH --nodes=1                               # Number of nodes\n')
         f.write('#SBATCH --ntasks-per-node=36                    # Number of processors per node\n')
@@ -104,10 +104,10 @@ def createSubmit(fastfiles, FAST_EXE, npf):
 
 if __name__=='__main__':
     # --- "Global" Parameters for this script
-    study = study1
+    study = study4
     ref_dir          = 'BAR_USC_template/'  # Folder where the fast input files are located (will be copied)
     main_file        = 'BAR_USC.fst'    # Main file in ref_dir, used as a template
-    work_dir         = 'BAR_USC_inputs/'+study['case']+'/'          # Output folder (will be created)
+    work_dir         = 'BAR_USC_inputs/'+study['parameter']+'/'          # Output folder (will be created)
     FAST_EXE = '/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast'
     npf = 1  # number of FAST runs per submission script
     # --- Generate inputs files

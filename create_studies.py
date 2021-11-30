@@ -26,14 +26,14 @@ BDmat = BDmat_ref.copy()
 """Study 1: mass sensitivity    """
 mi = EDmat[20, 3]  # kg/m3
 L_segment = 3.54573  # m
-m_joint_nom = 2000 / L_segment  # kg/m3
+m_joint_nom = 1000 / L_segment  # kg/m3
 num = 10
 m_range = np.linspace(0.2, 2, num=num)
 m_add = m_range * m_joint_nom
 mx = (mi + m_add) / mi
 ix = mx
 kx = np.ones(num)
-mult = m_range
+values = 1000 * m_range
 
 EDmat1 = np.repeat(EDmat[:, :, np.newaxis], num, axis=2)
 BDmat1 = np.repeat(BDmat[:, :, np.newaxis], num, axis=2)
@@ -67,15 +67,13 @@ for i in range(0, num):
 x = EDmat1[:, :, 0]
 y = BDmat1[:, :, 0]
 
-study1 = {'EDmat': EDmat1, 'BDmat': BDmat1, 'parameter': 'mass', 'multipliers': mult, 'num': num}
+study1 = {'EDmat': EDmat1, 'BDmat': BDmat1, 'parameter': 'mass', 'values': values, 'num': num}
 
 """Study 2: inertia sensitivity    """
 num = 10
 ix = np.linspace(1, 5.5, num=num)
-i_add = m_range * m_joint_nom
 mx = np.ones(num)
 kx = np.ones(num)
-mult = ix
 
 EDmat2 = np.repeat(EDmat[:, :, np.newaxis], num, axis=2)
 BDmat2 = np.repeat(BDmat[:, :, np.newaxis], num, axis=2)
@@ -109,12 +107,11 @@ for i in range(0, num):
 x = EDmat2[:, :, 0]
 y = BDmat2[:, :, 0]
 
-study2 = {'EDmat': EDmat2, 'BDmat': BDmat2, 'parameter': 'inertia', 'multipliers': mult, 'num': num}
+study2 = {'EDmat': EDmat2, 'BDmat': BDmat2, 'parameter': 'inertia', 'values': ix, 'num': num}
 
 """Study 3: stiffness sensitivity    """
 num = 10
-kx = np.linspace(1, 5.5, num=num)
-k_add = m_range * m_joint_nom
+kx = np.linspace(0.5, 5, num=num)
 mx = np.ones(num)
 ix = np.ones(num)
 mult = kx
@@ -151,25 +148,56 @@ for i in range(0, num):
 x = EDmat3[:, :, 0]
 y = BDmat3[:, :, 0]
 
-study3 = {'EDmat': EDmat3, 'BDmat': BDmat3, 'parameter': 'stiffness', 'multipliers': mult, 'num': num}
+study3 = {'EDmat': EDmat3, 'BDmat': BDmat3, 'parameter': 'stiffness', 'values': kx, 'num': num}
 
- # K_ShrFlp = 1
- # K_ShrEdg = 1
- # EA = 1
- # EI_Edg = 1
- # EI_Flp = 1
- # GJ = 1
- # m_add = 1
- # Xcm = 1
- # Ycm = 1
-# i_Edg = 1
-# i_Flp = 1
-# i_plr = i_Flp + i_Edg
-# i_cp = 1
-#
-# BDmat[20, 1] = K_ShrFlp
-# BDmat[20, 8] = K_ShrEdg
-# BDmat[20, 15] = EA
-# BDmat[20, 22] = EI_Edg
-# BDmat[20, 29] = EI_Flp
-# BDmat[20, 36] = GJ
+"""Study 4: location sensitivity    """
+L_segment = 3.54573  # m
+m_70 = 1000 / L_segment  # kg/m3, at 70% span
+slope = m_70/0.3
+m0 = slope
+
+span = EDmat[:, 0]
+first = 6
+last = 24
+num = last-first
+# span_range = span[first:last]
+m_add = m0 - span * slope  # linear
+kx = 1
+
+EDmat4 = np.repeat(EDmat[:, :, np.newaxis], num, axis=2)
+BDmat4 = np.repeat(BDmat[:, :, np.newaxis], num, axis=2)
+for i in range(first, last):
+    k = i-first
+    mi = EDmat[i, 3]
+    mx = (mi + m_add[i]) / mi
+    ix = mx
+    EDmat4[i, 3, k]   = EDmat4[i, 3, k]  * mx  # BMassDen
+    EDmat4[i, 4, k]   = EDmat4[i, 4, k]  * kx  # FlpStff
+    EDmat4[i, 5, k]   = EDmat4[i, 5, k]  * kx  # EdgStff
+    BDmat4[i, 1, k]   = BDmat4[i, 1, k]  * kx  # K_ShrFlp
+    BDmat4[i, 8, k]   = BDmat4[i, 8, k]  * kx  # K_ShrEdg
+    BDmat4[i, 15, k]  = BDmat4[i, 15, k] * kx  # EA
+    BDmat4[i, 22, k]  = BDmat4[i, 22, k] * kx  # EI_Edg
+    BDmat4[i, 29, k]  = BDmat4[i, 29, k] * kx  # EI_Flp
+    BDmat4[i, 36, k]  = BDmat4[i, 36, k] * kx  # GJ
+    BDmat4[i, 37, k]  = BDmat4[i, 37, k] * mx  # m
+    BDmat4[i, 42, k]  = BDmat4[i, 42, k] * mx  # -mYcm
+    BDmat4[i, 44, k]  = BDmat4[i, 44, k] * mx  # m
+    BDmat4[i, 48, k]  = BDmat4[i, 48, k] * mx  # mXcm
+    BDmat4[i, 51, k]  = BDmat4[i, 51, k] * mx  # m
+    BDmat4[i, 52, k]  = BDmat4[i, 52, k] * mx  # mYcm
+    BDmat4[i, 53, k]  = BDmat4[i, 53, k] * mx  # -mXcm
+    BDmat4[i, 57, k]  = BDmat4[i, 57, k] * mx  # mYcm
+    BDmat4[i, 58, k]  = BDmat4[i, 58, k] * ix  # i_Edg
+    BDmat4[i, 59, k]  = BDmat4[i, 59, k] * ix  # -i_cp
+    BDmat4[i, 63, k]  = BDmat4[i, 63, k] * mx  # -mXcm
+    BDmat4[i, 64, k]  = BDmat4[i, 64, k] * ix  # -i_cp
+    BDmat4[i, 65, k]  = BDmat4[i, 65, k] * ix  # i_Flp
+    BDmat4[i, 67, k]  = BDmat4[i, 67, k] * mx  # -mYcm
+    BDmat4[i, 68, k]  = BDmat4[i, 68, k] * mx  # mXcm
+    BDmat4[i, 72, k]  = BDmat4[i, 72, k] * ix  # i_plr
+
+x = EDmat4[:, :, 0]
+y = BDmat4[:, :, 0]
+
+study4 = {'EDmat': EDmat4, 'BDmat': BDmat4, 'parameter': 'location', 'values': span[first:last], 'num': num}

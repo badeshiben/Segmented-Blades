@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="458e8864-9f62-47f4-8041-8d8917031b91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAR_USC_template/BAR_USC_InflowFile.dat" beforeDir="false" afterPath="$PROJECT_DIR$/BAR_USC_template/BAR_USC_InflowFile.dat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -318,6 +319,10 @@
     <state x="-1267" y="387" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1636733259095" />
     <state x="653" y="402" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1638193580176" />
     <state x="-1267" y="372" key="com.intellij.ide.util.TipDialog/0.23.1920.1057/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1629814519073" />
+    <state x="640" y="297" width="639" height="486" key="find.popup" timestamp="1638282840799">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="640" y="297" width="639" height="486" key="find.popup/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1638282840799" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

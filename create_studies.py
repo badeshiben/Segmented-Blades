@@ -156,13 +156,17 @@ L_segment = 3.54573  # m
 m_70 = 1000 / L_segment  # kg/m3, at 70% span
 slope = m_70/0.3
 m0 = slope
-
 span = EDmat[:, 0]
+# m_add = m0 - span * slope  # linear
+# mpoly = np.array([51497, -199850, 291941, -181858, 30191, 8080])  # assuming =1000 at 69% span
+m_add = []
+for i in span:
+    m_add.append(51497*i**5 + -199850*i**4 + 291941*i**3 + -181858*i**2 + 30191*i + 8080)
+m_add = np.asarray(m_add)
+m_add /= L_segment
 first = 6
 last = 24
 num = last-first
-# span_range = span[first:last]
-m_add = m0 - span * slope  # linear
 kx = 1
 
 EDmat4 = np.repeat(EDmat[:, :, np.newaxis], num, axis=2)

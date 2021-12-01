@@ -88,7 +88,7 @@ def createSubmit(fastfiles, FAST_EXE, npf):
         name = fname[:-4]
         f = open(work_dir + "Submit_" + name + ".sh", "w")
         f.write('#! /bin/bash\n')
-        f.write('#SBATCH --job-name=FVWcheck                     # Job name\n')
+        f.write('#SBATCH --job-name=SegBlade                     # Job name\n')
         f.write('#SBATCH --time 16:00:00\n')
         f.write('#SBATCH -A bar\n')
         f.write('#SBATCH --nodes=1                               # Number of nodes\n')
@@ -98,7 +98,8 @@ def createSubmit(fastfiles, FAST_EXE, npf):
         f.write('#SBATCH -o slurm-%x-%j.log                      # Output\n')
         f.write('\n')
         f.write('module purge\n')
-        f.write('ml comp-intel mkl\n')
+        f.write('ml conda comp-intel intel-mpi mkl\n')
+        f.write('module unload gcc\n')
         f.write('\n')
         f.write(FAST_EXE + ' ' + fname + '\n')
         f.write('wait')
@@ -106,7 +107,7 @@ def createSubmit(fastfiles, FAST_EXE, npf):
 
 if __name__=='__main__':
     # --- "Global" Parameters for this script
-    study = study2
+    study = study1
     ref_dir          = 'BAR_USC_template/'  # Folder where the fast input files are located (will be copied)
     main_file        = 'BAR_USC.fst'    # Main file in ref_dir, used as a template
     work_dir         = 'BAR_USC_inputs/'+study['parameter']+'/'          # Output folder (will be created)

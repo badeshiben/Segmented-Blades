@@ -1,5 +1,5 @@
 #! /bin/bash
-#SBATCH --job-name=FVWcheck                     # Job name
+#SBATCH --job-name=SegBlade                     # Job name
 #SBATCH --time 16:00:00
 #SBATCH -A bar
 #SBATCH --nodes=1                               # Number of nodes
@@ -9,7 +9,8 @@
 #SBATCH -o slurm-%x-%j.log                      # Output
 
 module purge
-ml comp-intel mkl
+ml conda comp-intel intel-mpi mkl
+module unload gcc
 
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.45.fst
 wait

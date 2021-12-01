@@ -1,6 +1,9 @@
 /Documents
 /outputs
 /210121_BD
+*.log
 *.outb
 *.zip
 *.yaml
+*.ech
+*.sum

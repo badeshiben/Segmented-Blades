@@ -111,8 +111,8 @@ y = BDmat2[:, :, 0]
 study2 = {'EDmat': EDmat2, 'BDmat': BDmat2, 'parameter': 'inertia', 'values': ix, 'num': num}
 
 """Study 3: stiffness sensitivity    """
-num = 10
-kx = np.linspace(0.5, 5, num=num)
+num = 4
+kx = np.linspace(0.2, 0.8, num=num)
 mx = np.ones(num)
 ix = np.ones(num)
 mult = kx

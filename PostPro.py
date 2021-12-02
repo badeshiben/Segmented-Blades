@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import fastlib
 import weio
-from create_studies import study1, study2, study3
+from create_studies import study1, study2, study3, study4
 import re
 from prettyplotlib.utils import remove_chartjunk
 import matplotlib.pylab as pl
@@ -31,16 +31,19 @@ def plot_sensitivity(dfPlot, param, plot):
     """
     fig, ax1 = plt.subplots(1, figsize=(8.5, 11))  # (6.4,4.8)
     color = 'tab:red'
-    ax1.plot(dfPlot[param], dfPlot['OoPDefl1_[m]'], '-o', color=color) #, label='max out of plane blade tip deflection')
+    ax1.plot(dfPlot[param], dfPlot['Deflection'], '-o', color=color)  #, output channel is something like 'TipTDxr' label='max out of plane blade tip deflection')
     ax1.grid()
-    ax1.set_xlabel('Joint ' + param + ' factor')
-    ax1.set_ylabel('Out of plane deflection [m]', color=color)
+    if param == 'mass':
+        ax1.set_xlabel('Joint ' + param + ' [kg]')
+    else:
+        ax1.set_xlabel('Joint ' + param + ' multiplier')
+    ax1.set_ylabel('Tip deflection [m]', color=color)
     ax1.tick_params(direction='in', axis='y', labelcolor=color)
 
     ax2 = ax1.twinx()
     color = 'tab:blue'
-    ax2.plot(dfPlot[param], dfPlot['HSShftPwr_[kW]'], '-o', color=color) #, label='average power output [kW]')
-    ax2.set_ylabel('Rated power [kW]', color=color)
+    ax2.plot(dfPlot[param], dfPlot['GenPwr_[kW]'], '-o', color=color) #, label='average power output [kW]')
+    ax2.set_ylabel('Average power [kW]', color=color)
     ax2.tick_params(direction='in', axis='y', labelcolor=color)
 
     remove_chartjunk(ax1, ['top', 'right'])
@@ -67,30 +70,32 @@ def run_study(param, values):
     """
     cwd = os.getcwd()
     work_dir = 'BAR_USC_inputs/' + param + '/'
-    postpro_dir = './PostPro/' + param + '/'
+    postpro_dir = './PostPro/'  # + param + '/'
     # create csvs
     if not os.path.isdir(cwd + postpro_dir[1:]):
         os.mkdir(cwd + postpro_dir[1:])
     # find average power output at rated conditions
     ratedFiles=[]
     for val in values:
-        case     =param+'{:.1f}'.format(val)+'rated'
+        case     =param+'{:.2f}'.format(val)
         filename = os.path.join(work_dir, case + '.outb')
         ratedFiles.append(filename)
     print(ratedFiles)
     dfAvg = fastlib.averagePostPro(ratedFiles, avgMethod='constantwindow', avgParam=None, ColMap={'WS_[m/s]':'Wind1VelX_[m/s]'})
     dfAvg.insert(0, param, values)
-    dfPlot=dfAvg[[param, 'HSShftPwr_[kW]']]
+    dfPlot=dfAvg[[param, 'GenPwr_[kW]']]
     # find extreme out of plane tip deflection in extreme conditions
     maxTipDefl=[]
     for val in values:
-        case     =param+'{:.1f}'.format(val)+'extreme'
+        case     =param+'{:.2f}'.format(val)
         filename = os.path.join(work_dir, case + '.outb')
         dfTs = weio.FASTOutFile(filename).toDataFrame()
-        tipDeflection = dfTs['OoPDefl1_[m]']
-        maxTipDefl.append(max(tipDeflection))
+        tipDeflection1 = dfTs['B1TipTDxr_[m]']
+        tipDeflection2 = dfTs['B2TipTDxr_[m]']
+        tipDeflection3 = dfTs['B3TipTDxr_[m]']
+        maxTipDefl.append(max(max(tipDeflection1), max(tipDeflection1), max(tipDeflection1)))
         #header = dfTs.head()
-    dfPlot['OoPDefl1_[m]'] = maxTipDefl
+    dfPlot['Deflection'] = maxTipDefl
     # --- Save to csv since step above can be expensive
     # csvname = 'Results_ws{:.0f}_'.format(wsp) + paramfull + '.csv'
     # csvpath = os.path.join(postpro_dir, csvname)
@@ -98,14 +103,14 @@ def run_study(param, values):
     # print(dfAvg)
     # print('created all csvs ')
 
-    # outlist = ['HSShftPwr_[kW]']
+    # outlist = ['GenPwr_[kW]']
 
     plot_sensitivity(dfPlot, param, 2)
 
 if __name__ == "__main__":
 
-    study = study1
-    run_study(param=study['parameter'], values=study['multipliers'])
+    study = study4
+    run_study(param=study['parameter'], values=study['values'])
 
 
 

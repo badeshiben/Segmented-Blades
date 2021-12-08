@@ -50,17 +50,18 @@ def genericStudy(study, ref_dir, work_dir, main_file):
     BaseDict = {'TMax': 720, 'DT': 2e-4, 'DT_Out': 0.1}  # NOTE: for other parametric studies these could be parameters
     # --- Defining the parametric study, parameters that changes (list of dictionnaries with keys as FAST parameters)
     PARAMS=[]
-
-    for i in range(0, study['num']):
-        ed = study['EDmat'][:, :, i]
-        bd = study['BDmat'][:, :, i]
-        p = BaseDict.copy()
-        p['EDFile|BldFile1|BldProp'] = study['EDmat'][:,:,i]
-        p['BDBldFile(1)|BldFile|BeamProperties'] = study['BDmat'][:, :, i]
-        p['BDBldFile(2)|BldFile|BeamProperties'] = study['BDmat'][:, :, i]
-        p['BDBldFile(3)|BldFile|BeamProperties'] = study['BDmat'][:, :, i]
-        p['__name__'] = study['parameter']+'{:.2f}'.format(study['values'][i])
-        PARAMS.append(p)
+    for j in range(0, len(study['DLC'])):
+        for i in range(0, len(study['values'])):
+            ed = study['EDmat'][:, :, i]
+            bd = study['BDmat'][:, :, i]
+            p = BaseDict.copy()
+            p['EDFile|BldFile1|BldProp'] = study['EDmat'][:, :, i]
+            p['BDBldFile(1)|BldFile|BeamProperties'] = study['BDmat'][:, :, i]
+            p['BDBldFile(2)|BldFile|BeamProperties'] = study['BDmat'][:, :, i]
+            p['BDBldFile(3)|BldFile|BeamProperties'] = study['BDmat'][:, :, i]
+            p['InflowFile|FileName_BTS'] = "./Wind/DLC"+study['DLC'][j]+".bts"
+            p['__name__'] = study['parameter']+'{:.2f}'.format(study['values'][i])+'_DLC'+study['DLC'][j]
+            PARAMS.append(p)
 
 
     fastfiles = case_gen.templateReplace(PARAMS, ref_dir, outputDir=work_dir, removeRefSubFiles=True,
@@ -107,7 +108,7 @@ def createSubmit(fastfiles, FAST_EXE, npf):
 
 if __name__=='__main__':
     # --- "Global" Parameters for this script
-    study = study3
+    study = study4
     ref_dir          = 'BAR_USC_template/'  # Folder where the fast input files are located (will be copied)
     main_file        = 'BAR_USC.fst'    # Main file in ref_dir, used as a template
     work_dir         = 'BAR_USC_inputs/'+study['parameter']+'/'          # Output folder (will be created)

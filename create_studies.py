@@ -68,7 +68,8 @@ for i in range(0, num):
 x = EDmat1[:, :, 0]
 y = BDmat1[:, :, 0]
 
-study1 = {'EDmat': EDmat1, 'BDmat': BDmat1, 'parameter': 'mass', 'values': values, 'num': num}
+study1 = {'EDmat': EDmat1, 'BDmat': BDmat1, 'parameter': 'mass', 'values': values,
+          'DLC': ['1.1_U6', '1.1_U8', '1.1_U10', '1.1_U12', '1.1_U14', '1.1_U16', '1.1_U18', '1.1_U20', '1.1_U22', '1.1_U24', '1.1_U25', '1.3_U23']}
 
 """Study 2: inertia sensitivity    """
 num = 10
@@ -108,14 +109,15 @@ for i in range(0, num):
 x = EDmat2[:, :, 0]
 y = BDmat2[:, :, 0]
 
-study2 = {'EDmat': EDmat2, 'BDmat': BDmat2, 'parameter': 'inertia', 'values': ix, 'num': num}
+study2 = {'EDmat': EDmat2, 'BDmat': BDmat2, 'parameter': 'inertia', 'values': ix,
+          'DLC': ['1.1_U6', '1.1_U8', '1.1_U10', '1.1_U12', '1.1_U14', '1.1_U16', '1.1_U18', '1.1_U20', '1.1_U22', '1.1_U24', '1.1_U25', '1.3_U23']}
 
 """Study 3: stiffness sensitivity    """
-num = 4
-kx = np.linspace(0.2, 0.8, num=num)
+# num = 4
+kx = np.array([0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0])
+num = len(kx)
 mx = np.ones(num)
 ix = np.ones(num)
-mult = kx
 
 EDmat3 = np.repeat(EDmat[:, :, np.newaxis], num, axis=2)
 BDmat3 = np.repeat(BDmat[:, :, np.newaxis], num, axis=2)
@@ -149,7 +151,8 @@ for i in range(0, num):
 x = EDmat3[:, :, 0]
 y = BDmat3[:, :, 0]
 
-study3 = {'EDmat': EDmat3, 'BDmat': BDmat3, 'parameter': 'stiffness', 'values': kx, 'num': num}
+study3 = {'EDmat': EDmat3, 'BDmat': BDmat3, 'parameter': 'stiffness',  'values': kx,
+          'DLC': ['1.1_U6', '1.1_U8', '1.1_U10', '1.1_U12', '1.1_U14', '1.1_U16', '1.1_U18', '1.1_U20', '1.1_U22', '1.1_U24', '1.1_U25', '1.3_U23']}
 
 """Study 4: location sensitivity    """
 L_segment = 3.54573  # m
@@ -168,6 +171,7 @@ first = 6
 last = 24
 num = last-first
 kx = 1
+loc = span[first: last]
 
 EDmat4 = np.repeat(EDmat[:, :, np.newaxis], num, axis=2)
 BDmat4 = np.repeat(BDmat[:, :, np.newaxis], num, axis=2)
@@ -205,4 +209,5 @@ for i in range(first, last):
 x = EDmat4[:, :, 0]
 y = BDmat4[:, :, 0]
 
-study4 = {'EDmat': EDmat4, 'BDmat': BDmat4, 'parameter': 'location', 'values': span[first:last], 'num': num}
+study4 = {'EDmat': EDmat4, 'BDmat': BDmat4, 'parameter': 'location',  'values': loc,
+          'DLC': ['1.1_U6', '1.1_U8', '1.1_U10', '1.1_U12', '1.1_U14', '1.1_U16', '1.1_U18', '1.1_U20', '1.1_U22', '1.1_U24', '1.1_U25', '1.3_U23']}

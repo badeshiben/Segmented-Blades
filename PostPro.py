@@ -143,7 +143,7 @@ def run_study(param, values):
 
 if __name__ == "__main__":
 
-    study = study4
+    study = study1
     run_study(param=study['parameter'], values=study['values'])
 
 

@@ -1,62 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="458e8864-9f62-47f4-8041-8d8917031b91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/inertia/Wind/DLC1.1_U10.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/inertia/Wind/DLC1.1_U12.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/inertia/Wind/DLC1.1_U14.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/inertia/Wind/DLC1.1_U16.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/inertia/Wind/DLC1.1_U18.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/inertia/Wind/DLC1.1_U20.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/inertia/Wind/DLC1.1_U22.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/inertia/Wind/DLC1.1_U24.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/inertia/Wind/DLC1.1_U25.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/inertia/Wind/DLC1.1_U4.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/inertia/Wind/DLC1.1_U6.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/inertia/Wind/DLC1.1_U8.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/inertia/Wind/DLC1.3_U23.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/location/Wind/DLC1.1_U10.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/location/Wind/DLC1.1_U12.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/location/Wind/DLC1.1_U14.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/location/Wind/DLC1.1_U16.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/location/Wind/DLC1.1_U18.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/location/Wind/DLC1.1_U20.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/location/Wind/DLC1.1_U22.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/location/Wind/DLC1.1_U24.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/location/Wind/DLC1.1_U25.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/location/Wind/DLC1.1_U4.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/location/Wind/DLC1.1_U6.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/location/Wind/DLC1.1_U8.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/location/Wind/DLC1.3_U23.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/mass/Wind/DLC1.1_U10.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/mass/Wind/DLC1.1_U12.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/mass/Wind/DLC1.1_U14.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/mass/Wind/DLC1.1_U16.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/mass/Wind/DLC1.1_U18.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/mass/Wind/DLC1.1_U20.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/mass/Wind/DLC1.1_U22.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/mass/Wind/DLC1.1_U24.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/mass/Wind/DLC1.1_U25.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/mass/Wind/DLC1.1_U4.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/mass/Wind/DLC1.1_U6.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/mass/Wind/DLC1.1_U8.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/mass/Wind/DLC1.3_U23.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/stiffness/Wind/DLC1.1_U10.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/stiffness/Wind/DLC1.1_U12.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/stiffness/Wind/DLC1.1_U14.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/stiffness/Wind/DLC1.1_U16.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/stiffness/Wind/DLC1.1_U18.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/stiffness/Wind/DLC1.1_U20.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/stiffness/Wind/DLC1.1_U22.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/stiffness/Wind/DLC1.1_U24.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/stiffness/Wind/DLC1.1_U25.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/stiffness/Wind/DLC1.1_U4.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/stiffness/Wind/DLC1.1_U6.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/stiffness/Wind/DLC1.1_U8.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAR_USC_inputs/stiffness/Wind/DLC1.3_U23.bts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PostProDLC.py" beforeDir="false" afterPath="$PROJECT_DIR$/PostProDLC.py" afterDir="false" />
-    </list>
+    <list default="true" id="458e8864-9f62-47f4-8041-8d8917031b91" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

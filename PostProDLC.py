@@ -80,13 +80,15 @@ def run_study(param, values):
     # find average power output at rated conditions
     ratedFiles=[]
     for val in values:
-        case     =param+'{:.2f}'.format(val)+'DLC1.3_U7.5'
-        filename = os.path.join(work_dir, case + '.outb')
-        ratedFiles.append(filename)
+        for DLC in DLCs:
+            case     =param+'{:.2f}'.format(val)+'DLC'+DLC
+            filename = os.path.join(work_dir, case + '.outb')
+            ratedFiles.append(filename)
     print(ratedFiles)
     dfAvg = fastlib.averagePostPro(ratedFiles, avgMethod='constantwindow', avgParam=None, ColMap={'WS_[m/s]':'Wind1VelX_[m/s]'})
     dfAvg.insert(0, param, values)
     dfPlot=dfAvg[[param, 'GenPwr_[kW]']]
+
     # find extreme out of plane tip deflection in extreme conditions
     maxTipDefl=[]
     for val in values:
@@ -99,14 +101,7 @@ def run_study(param, values):
         maxTipDefl.append(max(max(tipDeflection1), max(tipDeflection1), max(tipDeflection1)))
         #header = dfTs.head()
     dfPlot['Deflection'] = maxTipDefl
-    # --- Save to csv since step above can be expensive
-    # csvname = 'Results_ws{:.0f}_'.format(wsp) + paramfull + '.csv'
-    # csvpath = os.path.join(postpro_dir, csvname)
-    # dfAvg.to_csv(csvpath, sep='\t', index=False)
-    # print(dfAvg)
-    # print('created all csvs ')
 
-    # outlist = ['GenPwr_[kW]']
 
     plot_sensitivity(dfPlot, param, 2)
 

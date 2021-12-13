@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import fastlib
 import weio
-from create_studies import study1, study2, study3, study4
+from create_studies import study1, study2, study3, study4, study5
 import re
 from prettyplotlib.utils import remove_chartjunk
 import matplotlib.pylab as pl
@@ -143,7 +143,7 @@ def run_study(param, values):
 
 if __name__ == "__main__":
 
-    study = study1
+    study = study5
     run_study(param=study['parameter'], values=study['values'])
 
 

@@ -122,5 +122,7 @@ True          TabDelim      - Use tab delimiters in text tabular output file? (f
  OutList The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
 "GenSpeed"
 "TwrBsMxt"
+"TwrBsMyt"
+"TwrBsMzt"
 END
 ---------------------------------------------------------------------------------------

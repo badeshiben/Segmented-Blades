@@ -4,10 +4,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import fastlib
 import weio
-from create_studies import study1, study2, study3, study4
+from create_studies import study1, study2, study3, study4, study5
 import re
 from prettyplotlib.utils import remove_chartjunk
 import matplotlib.pylab as pl
+import pyFAST.input_output as io
 
 
 colors=pl.cm.tab20b(np.linspace(0,1,10))
@@ -57,37 +58,102 @@ def plot_sensitivity(dfPlot, param, plot):
         plot_name = "PostPro/" + param+".pdf"
         plt.savefig(plot_name, bbox_inches='tight')
 
+def prob_WindDist(turbine_class, windspeed, disttype="pdf"):
+    """
+    Generates the probability of a windspeed given the cumulative
+    distribution or probability density function of a Weibull distribution
+    per IEC 61400.
+    NOTE: This uses the range of wind speeds simulated over, so if the
+    simulated wind speed range is not indicative of operation range, using
+    this cdf to calculate AEP is invalid
+    Parameters
+    ----------
+    windspeed : float or list-like
+        wind speed(s) to calculate probability of
+    disttype : str, optional
+        type of probability, currently supports CDF or PDF
+    Returns
+    -------
+    p_bin : list
+        list containing probabilities per wind speed bin
+    """
 
+    if turbine_class in [1, "I"]:
+        Vavg = 50 * 0.2
+
+    elif turbine_class in [2, "II"]:
+        Vavg = 42.5 * 0.2
+
+    elif turbine_class in [3, "III"]:
+        Vavg = 37.5 * 0.2
+
+    # Define parameters
+    k = 2  # Weibull shape parameter
+    c = (2 * Vavg) / np.sqrt(np.pi)  # Weibull scale parameter
+
+    if disttype.lower() == "cdf":
+        # Calculate probability of wind speed based on WeibulCDF
+        wind_prob = 1 - np.exp(-(windspeed / c) ** k)
+
+    elif disttype.lower() == "pdf":
+        # Calculate probability of wind speed based on WeibulPDF
+        wind_prob = (
+                (k / c)
+                * (windspeed / c) ** (k - 1)
+                * np.exp(-(windspeed / c) ** k)
+        )
+
+    else:
+        raise ValueError(
+            f"The {disttype} probability distribution type is invalid"
+        )
+
+    return wind_prob
 
 """ RUN RESOLUTION STUDY """
-def run_study(param, values):
+def run_study(param, values, DLCs):
     """ run a sensitivity study on segmentation joint parameters (mass, inertia, stiffness)
     Parameters
     ----------
     param:                 parameter varied, [str] (mass, inertia, stiffness)
     values:                list of values of parameter [1D list]
-    DLC:                   1D list of DLCs run [str]
+    DLCs:                   1D list of DLCs run [str]
     Returns
     -------
     plots of tip deflection, blade root moment, and power production sensitivity to parameter variation.
     """
+    DLC11 = DLCs[:-1]
     cwd = os.getcwd()
     work_dir = 'BAR_USC_inputs/' + param + '/'
     postpro_dir = './PostPro/'  # + param + '/'
     # create csvs
     if not os.path.isdir(cwd + postpro_dir[1:]):
         os.mkdir(cwd + postpro_dir[1:])
+
     # find average power output at rated conditions
-    ratedFiles=[]
+    pwr = np.empty([len(DLCs)-1, len(values)])  #[DLC1.1 x Values] array. kinda hacky, but can't use DLC 1.3 for this. Sorry.
+    i = 0
     for val in values:
-        for DLC in DLCs:
-            case     =param+'{:.2f}'.format(val)+'DLC'+DLC
+        Files = []
+        for DLC in DLC11:
+            case     =param+'{:.2f}'.format(val)+'_DLC'+DLC
             filename = os.path.join(work_dir, case + '.outb')
-            ratedFiles.append(filename)
-    print(ratedFiles)
-    dfAvg = fastlib.averagePostPro(ratedFiles, avgMethod='constantwindow', avgParam=None, ColMap={'WS_[m/s]':'Wind1VelX_[m/s]'})
-    dfAvg.insert(0, param, values)
-    dfPlot=dfAvg[[param, 'GenPwr_[kW]']]
+            Files.append(filename)
+            tsDf = io.fast_output_file.FASTOutputFile(filename).toDataFrame()
+            tsDf = tsDf['']
+        print(Files)
+
+        avgDf = fastlib.averagePostPro(Files, avgMethod='constantwindow', avgParam=None, ColMap={'WS_[m/s]':'Wind1VelX_[m/s]'})
+        avgDf = avgDf['GenPwr_[kW]']
+        pwr[:, i] = avgDf.to_numpy()
+        i = i+1
+    # TODO pietro sent a weibul thing. use this to calculate average power.
+    # later moment: TODO use fatpack to turn each column, with genpwr for whatever value param, into a single value
+    # dfPwr = pd.DataFrame(data=pwr, index=DLCs[:-2])
+    # dfAvg.insert(0, param, values)
+    wind_prob = prob_WindDist(3, [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 25])
+    cum = sum(wind_prob)
+    avgPwr = np.matmul(wind_prob, pwr)
 
     # find extreme out of plane tip deflection in extreme conditions
     maxTipDefl=[]
@@ -105,9 +171,10 @@ def run_study(param, values):
 
     plot_sensitivity(dfPlot, param, 2)
 
+
 if __name__ == "__main__":
 
-    study = study3
+    study = study1
     run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
 
 

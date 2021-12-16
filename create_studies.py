@@ -177,6 +177,7 @@ loc = span[first: last]
 
 EDmat4 = np.repeat(EDmat[:, :, np.newaxis], num, axis=2)
 BDmat4 = np.repeat(BDmat[:, :, np.newaxis], num, axis=2)
+m=[]
 for i in range(first, last):
     k = i-first
     mi = EDmat[i, 3]
@@ -207,6 +208,7 @@ for i in range(first, last):
     BDmat4[i, 67, k]  = BDmat4[i, 67, k] * mx  # -mYcm
     BDmat4[i, 68, k]  = BDmat4[i, 68, k] * mx  # mXcm
     BDmat4[i, 72, k]  = BDmat4[i, 72, k] * ix  # i_plr
+    m.append(mx)
 
 x = EDmat4[:, :, 0]
 y = BDmat4[:, :, 0]
@@ -214,5 +216,52 @@ y = BDmat4[:, :, 0]
 study4 = {'EDmat': EDmat4, 'BDmat': BDmat4, 'parameter': 'location',  'values': loc,
           'DLC': ['1.1_U4', '1.1_U6', '1.1_U8', '1.1_U10', '1.1_U12', '1.1_U14', '1.1_U16', '1.1_U18', '1.1_U20', '1.1_U22', '1.1_U24', '1.1_U25', '1.3_U23']}
 
-study5 = {'EDmat': 1, 'BDmat': 1, 'parameter': 'test',  'values': [1, 2],
+"""Study 5: spread mass sensitivity    """
+# mass is spread along three stations
+loc = [19, 20, 21]
+mi = EDmat[loc, 3]  # kg/m3
+L_segment = 3.54573  # m
+m_joint_nom = 1000 / L_segment / 3  # kg/m3
+num = 10
+m_range = np.linspace(0.2, 2, num=num)
+m_add = m_range * m_joint_nom
+mx = np.zeros([3, num])
+for i in range(0, len(mi)):
+    mx[i, :] = (mi[i] + m_add) / mi[i]
+ix = mx
+kx = np.ones(num)
+values = 1000 * m_range
+
+EDmat5 = np.repeat(EDmat[:, :, np.newaxis], num, axis=2)
+BDmat5 = np.repeat(BDmat[:, :, np.newaxis], num, axis=2)
+for j in range(0, len(loc)):
+    for i in range(0, num):
+        EDmat1[loc[j], 3, i]   = EDmat1[loc[j], 3, i]  * mx[j, i]  # BMassDen
+        BDmat1[loc[j], 37, i]  = BDmat1[loc[j], 37, i] * mx[j, i]  # m
+        BDmat1[loc[j], 42, i]  = BDmat1[loc[j], 42, i] * mx[j, i]  # -mYcm
+        BDmat1[loc[j], 44, i]  = BDmat1[loc[j], 44, i] * mx[j, i]  # m
+        BDmat1[loc[j], 48, i]  = BDmat1[loc[j], 48, i] * mx[j, i]  # mXcm
+        BDmat1[loc[j], 51, i]  = BDmat1[loc[j], 51, i] * mx[j, i]  # m
+        BDmat1[loc[j], 52, i]  = BDmat1[loc[j], 52, i] * mx[j, i]  # mYcm
+        BDmat1[loc[j], 53, i]  = BDmat1[loc[j], 53, i] * mx[j, i]  # -mXcm
+        BDmat1[loc[j], 57, i]  = BDmat1[loc[j], 57, i] * mx[j, i]  # mYcm
+        BDmat1[loc[j], 58, i]  = BDmat1[loc[j], 58, i] * ix[j, i]  # i_Edg
+        BDmat1[loc[j], 59, i]  = BDmat1[loc[j], 59, i] * ix[j, i]  # -i_cp
+        BDmat1[loc[j], 63, i]  = BDmat1[loc[j], 63, i] * mx[j, i]  # -mXcm
+        BDmat1[loc[j], 64, i]  = BDmat1[loc[j], 64, i] * ix[j, i]  # -i_cp
+        BDmat1[loc[j], 65, i]  = BDmat1[loc[j], 65, i] * ix[j, i]  # i_Flp
+        BDmat1[loc[j], 67, i]  = BDmat1[loc[j], 67, i] * mx[j, i]  # -mYcm
+        BDmat1[loc[j], 68, i]  = BDmat1[loc[j], 68, i] * mx[j, i]  # mXcm
+        BDmat1[loc[j], 72, i]  = BDmat1[loc[j], 58, i] + BDmat1[loc[j], 65, i]  # i_plr = i_Edg + i_Flp
+        # BDmat1[20, 72, i]  = BDmat1[20, 72, i] * ix[i]  # i_plr
+
+x = EDmat1[:, :, 9]
+y = BDmat1[:, :, 9]
+
+study5 = {'EDmat': EDmat1, 'BDmat': BDmat1, 'parameter': 'spread_mass', 'values': values,
+          'DLC': ['1.1_U4', '1.1_U6', '1.1_U8', '1.1_U10', '1.1_U12', '1.1_U14', '1.1_U16', '1.1_U18', '1.1_U20', '1.1_U22', '1.1_U24', '1.1_U25', '1.3_U23']}
+
+
+
+study6 = {'EDmat': 1, 'BDmat': 1, 'parameter': 'test',  'values': [1, 2],
           'DLC': ['1.1_U4', '1.1_U6', '1.3_U23']}

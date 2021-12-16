@@ -91,5 +91,7 @@ False         SumPrint      - Print summary data to "<RootName>.sum" (flag)
 "RootMyr"
 "RootMzr"
 "TipTDxr"
+"TipTDyr"
+"TipTDzr"
 END
 ---------------------------------------------------------------------------------------

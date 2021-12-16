@@ -30,16 +30,10 @@ def plot_sensitivity(dfPlot, param, plot):
     Plots max tip deflection and average power vs. varied parameter
 
     """
-    fig, ax1 = plt.subplots(1, figsize=(8.5, 11))  # (6.4,4.8)
-    color = 'tab:red'
+    ax1 = plt.subplot(211)  #, figsize=(8.5, 11))  # (6.4,4.8)
+    color = 'tab:orange'
     ax1.plot(dfPlot[param], dfPlot['Tip Deflection'], '-o', color=color)  #, output channel is something like 'TipTDxr' label='max out of plane blade tip deflection')
     ax1.grid()
-    if param == 'mass':
-        ax1.set_xlabel('Joint ' + param + ' [kg]')
-    elif param == 'location':
-        ax1.set_xlabel('Joint ' + param + ' [span]')
-    else:
-        ax1.set_xlabel('Joint ' + param + ' multiplier')
     ax1.set_ylabel('Tip deflection [m]', color=color)
     ax1.tick_params(direction='in', axis='y', labelcolor=color)
 
@@ -49,14 +43,21 @@ def plot_sensitivity(dfPlot, param, plot):
     ax2.set_ylabel('Average power [kW]', color=color)
     ax2.tick_params(direction='in', axis='y', labelcolor=color)
 
-    ax3 = ax2.twinx()
+    ax3 = plt.subplot(212)  #, figsize=(8.5, 11))
+    ax3.grid()
     color = 'tab:green'
     ax3.plot(dfPlot[param], dfPlot['Blade root moment DEL']/1000, '-o', color=color) #, label='average power output [kW]')
     ax3.set_ylabel('Blade root moment DEL [kN-m]', color=color)
     ax3.tick_params(direction='in', axis='y', labelcolor=color)
+    if param == 'mass':
+        ax3.set_xlabel('Joint ' + param + ' [kg]')
+    elif param == 'location':
+        ax3.set_xlabel('Joint ' + param + ' [span]')
+    else:
+        ax3.set_xlabel('Joint ' + param + ' multiplier')
 
     ax4 = ax3.twinx()
-    color = 'tab:black'
+    color = 'tab:red'
     ax4.plot(dfPlot[param], dfPlot['Tower base moment DEL'], '-o', color=color) #, label='average power output [kW]')
     ax4.set_ylabel('Tower base moment DEL [kN-m]', color=color)
     ax4.tick_params(direction='in', axis='y', labelcolor=color)
@@ -67,7 +68,7 @@ def plot_sensitivity(dfPlot, param, plot):
         plt.show()
         plt.close()
     elif plot == 2:
-        plot_name = "PostPro/" + param+".pdf"
+        plot_name = "PostPro/" + param+"2.pdf"
         plt.savefig(plot_name, bbox_inches='tight')
 
 def prob_WindDist(turbine_class, windspeed, disttype="pdf"):
@@ -180,8 +181,9 @@ def run_study(param, values, DLCs):
             filename = os.path.join(work_dir, case + '.outb')
             Files.append(filename)
             tsDf = io.fast_output_file.FASTOutputFile(filename).toDataFrame()
-            tsDf = tsDf[['TwrBsMxt_[kN-m]', 'B1RootMyr_[N-m]']]  # TODO twrbsMYt
+            tsDf = tsDf[['TwrBsMyt_[kN-m]', 'B1RootMyr_[N-m]']]  # TODO twrbsMYt
             ts = tsDf.to_numpy()
+            ts = ts[1000:, :]
             DEL_TBMy[j, i] = compute_del(ts[:, 0], 3, 600)
             DEL_BRMy[j, i] = compute_del(ts[:, 1], 3, 600)
             j += 1
@@ -218,14 +220,12 @@ def run_study(param, values, DLCs):
     dfPlot['Blade root moment DEL'] = avg_DEL_BRMy
     dfPlot['Tower base moment DEL'] = avg_DEL_TBMy
 
-
-
-    plot_sensitivity(dfPlot, param, 1)
+    plot_sensitivity(dfPlot, param, 2)
 
 
 if __name__ == "__main__":
 
-    study = study1
+    study = study4
     run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
 
 

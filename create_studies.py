@@ -214,7 +214,7 @@ x = EDmat4[:, :, 0]
 y = BDmat4[:, :, 0]
 
 study4 = {'EDmat': EDmat4, 'BDmat': BDmat4, 'parameter': 'location',  'values': loc,
-          'DLC': ['1.1_U4', '1.1_U6', '1.1_U8', '1.1_U10', '1.1_U12', '1.1_U14', '1.1_U16', '1.1_U18', '1.1_U20', '1.1_U22', '1.1_U24', '1.1_U25', '1.3_U23']}
+          'DLC': ['1.1_U4', '1.1_U6', '1.1_U8', '1.1_U10', '1.1_U12', '1.1_U14', '1.1_U16', '1.1_U18', '1.1_U20', '1.1_U22', '1.1_U24', '1.1_U25', '1.3_U23']}  #TODO For some reason, location0.34 DLC1.1_U25 .outb is missing y, z tip deflection columns
 
 """Study 5: spread mass sensitivity    """
 # mass is spread along three stations
@@ -236,29 +236,29 @@ EDmat5 = np.repeat(EDmat[:, :, np.newaxis], num, axis=2)
 BDmat5 = np.repeat(BDmat[:, :, np.newaxis], num, axis=2)
 for j in range(0, len(loc)):
     for i in range(0, num):
-        EDmat1[loc[j], 3, i]   = EDmat1[loc[j], 3, i]  * mx[j, i]  # BMassDen
-        BDmat1[loc[j], 37, i]  = BDmat1[loc[j], 37, i] * mx[j, i]  # m
-        BDmat1[loc[j], 42, i]  = BDmat1[loc[j], 42, i] * mx[j, i]  # -mYcm
-        BDmat1[loc[j], 44, i]  = BDmat1[loc[j], 44, i] * mx[j, i]  # m
-        BDmat1[loc[j], 48, i]  = BDmat1[loc[j], 48, i] * mx[j, i]  # mXcm
-        BDmat1[loc[j], 51, i]  = BDmat1[loc[j], 51, i] * mx[j, i]  # m
-        BDmat1[loc[j], 52, i]  = BDmat1[loc[j], 52, i] * mx[j, i]  # mYcm
-        BDmat1[loc[j], 53, i]  = BDmat1[loc[j], 53, i] * mx[j, i]  # -mXcm
-        BDmat1[loc[j], 57, i]  = BDmat1[loc[j], 57, i] * mx[j, i]  # mYcm
-        BDmat1[loc[j], 58, i]  = BDmat1[loc[j], 58, i] * ix[j, i]  # i_Edg
-        BDmat1[loc[j], 59, i]  = BDmat1[loc[j], 59, i] * ix[j, i]  # -i_cp
-        BDmat1[loc[j], 63, i]  = BDmat1[loc[j], 63, i] * mx[j, i]  # -mXcm
-        BDmat1[loc[j], 64, i]  = BDmat1[loc[j], 64, i] * ix[j, i]  # -i_cp
-        BDmat1[loc[j], 65, i]  = BDmat1[loc[j], 65, i] * ix[j, i]  # i_Flp
-        BDmat1[loc[j], 67, i]  = BDmat1[loc[j], 67, i] * mx[j, i]  # -mYcm
-        BDmat1[loc[j], 68, i]  = BDmat1[loc[j], 68, i] * mx[j, i]  # mXcm
-        BDmat1[loc[j], 72, i]  = BDmat1[loc[j], 58, i] + BDmat1[loc[j], 65, i]  # i_plr = i_Edg + i_Flp
+        EDmat5[loc[j], 3, i]   = EDmat5[loc[j], 3, i]  * mx[j, i]  # BMassDen
+        BDmat5[loc[j], 37, i]  = BDmat5[loc[j], 37, i] * mx[j, i]  # m
+        BDmat5[loc[j], 42, i]  = BDmat5[loc[j], 42, i] * mx[j, i]  # -mYcm
+        BDmat5[loc[j], 44, i]  = BDmat5[loc[j], 44, i] * mx[j, i]  # m
+        BDmat5[loc[j], 48, i]  = BDmat5[loc[j], 48, i] * mx[j, i]  # mXcm
+        BDmat5[loc[j], 51, i]  = BDmat5[loc[j], 51, i] * mx[j, i]  # m
+        BDmat5[loc[j], 52, i]  = BDmat5[loc[j], 52, i] * mx[j, i]  # mYcm
+        BDmat5[loc[j], 53, i]  = BDmat5[loc[j], 53, i] * mx[j, i]  # -mXcm
+        BDmat5[loc[j], 57, i]  = BDmat5[loc[j], 57, i] * mx[j, i]  # mYcm
+        BDmat5[loc[j], 58, i]  = BDmat5[loc[j], 58, i] * ix[j, i]  # i_Edg
+        BDmat5[loc[j], 59, i]  = BDmat5[loc[j], 59, i] * ix[j, i]  # -i_cp
+        BDmat5[loc[j], 63, i]  = BDmat5[loc[j], 63, i] * mx[j, i]  # -mXcm
+        BDmat5[loc[j], 64, i]  = BDmat5[loc[j], 64, i] * ix[j, i]  # -i_cp
+        BDmat5[loc[j], 65, i]  = BDmat5[loc[j], 65, i] * ix[j, i]  # i_Flp
+        BDmat5[loc[j], 67, i]  = BDmat5[loc[j], 67, i] * mx[j, i]  # -mYcm
+        BDmat5[loc[j], 68, i]  = BDmat5[loc[j], 68, i] * mx[j, i]  # mXcm
+        BDmat5[loc[j], 72, i]  = BDmat5[loc[j], 58, i] + BDmat5[loc[j], 65, i]  # i_plr = i_Edg + i_Flp
         # BDmat1[20, 72, i]  = BDmat1[20, 72, i] * ix[i]  # i_plr
 
-x = EDmat1[:, :, 9]
-y = BDmat1[:, :, 9]
+x = EDmat5[:, :, 9]
+y = BDmat5[:, :, 9]
 
-study5 = {'EDmat': EDmat1, 'BDmat': BDmat1, 'parameter': 'spread_mass', 'values': values,
+study5 = {'EDmat': EDmat5, 'BDmat': BDmat5, 'parameter': 'spread_mass', 'values': values,
           'DLC': ['1.1_U4', '1.1_U6', '1.1_U8', '1.1_U10', '1.1_U12', '1.1_U14', '1.1_U16', '1.1_U18', '1.1_U20', '1.1_U22', '1.1_U24', '1.1_U25', '1.3_U23']}
 
 

@@ -68,7 +68,7 @@ def plot_sensitivity(dfPlot, param, plot):
         plt.show()
         plt.close()
     elif plot == 2:
-        plot_name = "PostPro/" + param+"2.pdf"
+        plot_name = "PostPro/" + param+"3.pdf"
         plt.savefig(plot_name, bbox_inches='tight')
 
 def prob_WindDist(turbine_class, windspeed, disttype="pdf"):
@@ -225,7 +225,7 @@ def run_study(param, values, DLCs):
 
 if __name__ == "__main__":
 
-    study = study4
+    study = study1
     run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
 
 

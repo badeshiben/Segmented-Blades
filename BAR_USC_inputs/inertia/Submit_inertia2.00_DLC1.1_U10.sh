@@ -13,4 +13,67 @@ ml conda comp-intel intel-mpi mkl
 module unload gcc
 
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia2.00_DLC1.1_U10.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia2.50_DLC1.1_U10.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia3.00_DLC1.1_U10.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia3.50_DLC1.1_U10.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia4.00_DLC1.1_U10.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia4.50_DLC1.1_U10.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia5.00_DLC1.1_U10.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia5.50_DLC1.1_U10.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia1.00_DLC1.1_U12.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia1.50_DLC1.1_U12.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia2.00_DLC1.1_U12.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia2.50_DLC1.1_U12.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia3.00_DLC1.1_U12.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia3.50_DLC1.1_U12.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia4.00_DLC1.1_U12.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia4.50_DLC1.1_U12.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia5.00_DLC1.1_U12.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia5.50_DLC1.1_U12.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia1.00_DLC1.1_U14.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia1.50_DLC1.1_U14.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia2.00_DLC1.1_U14.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia2.50_DLC1.1_U14.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia3.00_DLC1.1_U14.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia3.50_DLC1.1_U14.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia4.00_DLC1.1_U14.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia4.50_DLC1.1_U14.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia5.00_DLC1.1_U14.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia5.50_DLC1.1_U14.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia1.00_DLC1.1_U16.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia1.50_DLC1.1_U16.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia2.00_DLC1.1_U16.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia2.50_DLC1.1_U16.fst
+&
 wait

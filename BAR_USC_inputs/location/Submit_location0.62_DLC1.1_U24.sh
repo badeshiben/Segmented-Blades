@@ -13,4 +13,67 @@ ml conda comp-intel intel-mpi mkl
 module unload gcc
 
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.62_DLC1.1_U24.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.66_DLC1.1_U24.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.69_DLC1.1_U24.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.72_DLC1.1_U24.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.76_DLC1.1_U24.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.79_DLC1.1_U24.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.21_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.24_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.28_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.31_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.34_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.38_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.41_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.45_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.48_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.52_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.55_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.59_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.62_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.66_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.69_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.72_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.76_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.79_DLC1.1_U25.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.21_DLC1.3_U23.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.24_DLC1.3_U23.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.28_DLC1.3_U23.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.31_DLC1.3_U23.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.34_DLC1.3_U23.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.38_DLC1.3_U23.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.41_DLC1.3_U23.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.45_DLC1.3_U23.fst
+&
 wait

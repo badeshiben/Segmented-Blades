@@ -13,4 +13,7 @@ ml conda comp-intel intel-mpi mkl
 module unload gcc
 
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia5.00_DLC1.3_U23.fst
+&
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast inertia5.50_DLC1.3_U23.fst
+&
 wait

@@ -85,6 +85,7 @@ def createSubmit(fastfiles, FAST_EXE, npf):
     chunks = list(divide_chunks(fastfiles, npf))
     #one file per submit script
     for chunk in chunks:
+        # for fst in chunk
         fname = chunk[0].replace(work_dir, '')
         name = fname[:-4]
         f = open(work_dir + "Submit_" + name + ".sh", "w")
@@ -102,13 +103,17 @@ def createSubmit(fastfiles, FAST_EXE, npf):
         f.write('ml conda comp-intel intel-mpi mkl\n')
         f.write('module unload gcc\n')
         f.write('\n')
-        f.write(FAST_EXE + ' ' + fname + '\n')
+        for fst in chunk:
+            fname = fst.replace(work_dir, '')
+            f.write(FAST_EXE + ' ' + fname + '\n')
+            f.write('&\n')
+
         f.write('wait')
         f.close()
 
 if __name__=='__main__':
     # --- "Global" Parameters for this script
-    study = study1
+    study = study4
     ref_dir          = 'BAR_USC_template/'  # Folder where the fast input files are located (will be copied)
     main_file        = 'BAR_USC.fst'    # Main file in ref_dir, used as a template
     work_dir         = 'BAR_USC_inputs/'+study['parameter']+'/'          # Output folder (will be created)

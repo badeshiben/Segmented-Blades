@@ -91,7 +91,7 @@ def createSubmit(fastfiles, FAST_EXE, npf):
         f = open(work_dir + "Submit_" + name + ".sh", "w")
         f.write('#! /bin/bash\n')
         f.write('#SBATCH --job-name=SegBlade                     # Job name\n')
-        f.write('#SBATCH --time 16:00:00\n')
+        f.write('#SBATCH --time 12:00:00\n')
         f.write('#SBATCH -A bar\n')
         f.write('#SBATCH -p standard\n')
         f.write('#SBATCH --nodes=1                               # Number of nodes\n')
@@ -106,9 +106,8 @@ def createSubmit(fastfiles, FAST_EXE, npf):
         f.write('\n')
         for fst in chunk:
             fname = fst.replace(work_dir, '')
-            f.write(FAST_EXE + ' ' + fname + '\n')
-            f.write('&\n')
-
+            f.write(FAST_EXE + '\n')
+            f.write(fname + ' &\n')
         f.write('wait')
         f.close()
 
@@ -119,7 +118,7 @@ if __name__=='__main__':
     main_file        = 'BAR_USC.fst'    # Main file in ref_dir, used as a template
     work_dir         = 'BAR_USC_inputs/'+study['parameter']+'/'          # Output folder (will be created)
     FAST_EXE = '/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast'
-    npf = 32  # number of FAST runs per submission script
+    npf = 36  # number of FAST runs per submission script
     # --- Generate inputs files
     fastfiles = genericStudy(study, ref_dir, work_dir, main_file)
     createSubmit(fastfiles, FAST_EXE, npf)

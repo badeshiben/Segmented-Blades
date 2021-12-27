@@ -68,7 +68,7 @@ def plot_sensitivity(dfPlot, param, plot):
         plt.show()
         plt.close()
     elif plot == 2:
-        plot_name = "PostPro/" + param+"3.pdf"
+        plot_name = "PostPro/" + param+"4.pdf"
         plt.savefig(plot_name, bbox_inches='tight')
 
 def prob_WindDist(turbine_class, windspeed, disttype="pdf"):

@@ -14,75 +14,47 @@ ml conda comp-intel intel-mpi mkl
 module unload gcc
 
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass200.00_DLC1.1_U4.fst &
+mass1800.00_DLC1.1_U24.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass400.00_DLC1.1_U4.fst &
+mass2000.00_DLC1.1_U24.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass600.00_DLC1.1_U4.fst &
+mass200.00_DLC1.1_U25.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass800.00_DLC1.1_U4.fst &
+mass400.00_DLC1.1_U25.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1000.00_DLC1.1_U4.fst &
+mass600.00_DLC1.1_U25.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1200.00_DLC1.1_U4.fst &
+mass800.00_DLC1.1_U25.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1400.00_DLC1.1_U4.fst &
+mass1000.00_DLC1.1_U25.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1600.00_DLC1.1_U4.fst &
+mass1200.00_DLC1.1_U25.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1800.00_DLC1.1_U4.fst &
+mass1400.00_DLC1.1_U25.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass2000.00_DLC1.1_U4.fst &
+mass1600.00_DLC1.1_U25.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass200.00_DLC1.1_U6.fst &
+mass1800.00_DLC1.1_U25.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass400.00_DLC1.1_U6.fst &
+mass2000.00_DLC1.1_U25.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass600.00_DLC1.1_U6.fst &
+mass200.00_DLC1.3_U23.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass800.00_DLC1.1_U6.fst &
+mass400.00_DLC1.3_U23.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1000.00_DLC1.1_U6.fst &
+mass600.00_DLC1.3_U23.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1200.00_DLC1.1_U6.fst &
+mass800.00_DLC1.3_U23.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1400.00_DLC1.1_U6.fst &
+mass1000.00_DLC1.3_U23.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1600.00_DLC1.1_U6.fst &
+mass1200.00_DLC1.3_U23.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1800.00_DLC1.1_U6.fst &
+mass1400.00_DLC1.3_U23.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass2000.00_DLC1.1_U6.fst &
+mass1600.00_DLC1.3_U23.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass200.00_DLC1.1_U8.fst &
+mass1800.00_DLC1.3_U23.fst &
 /home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass400.00_DLC1.1_U8.fst &
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass600.00_DLC1.1_U8.fst &
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass800.00_DLC1.1_U8.fst &
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1000.00_DLC1.1_U8.fst &
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1200.00_DLC1.1_U8.fst &
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1400.00_DLC1.1_U8.fst &
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1600.00_DLC1.1_U8.fst &
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1800.00_DLC1.1_U8.fst &
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass2000.00_DLC1.1_U8.fst &
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass200.00_DLC1.1_U10.fst &
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass400.00_DLC1.1_U10.fst &
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass600.00_DLC1.1_U10.fst &
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass800.00_DLC1.1_U10.fst &
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1000.00_DLC1.1_U10.fst &
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast
-mass1200.00_DLC1.1_U10.fst &
+mass2000.00_DLC1.3_U23.fst &
 wait

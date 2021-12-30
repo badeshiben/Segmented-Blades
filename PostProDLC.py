@@ -12,8 +12,8 @@ import pyFAST.input_output as io
 import fatpack
 
 colors=pl.cm.tab20b(np.linspace(0,1,10))
-plt.rc("font",family="serif")
-plt.rc("font",size=14)
+plt.rc("font", family="serif")
+plt.rc("font", size=6)
 
 """ PLOTTING MEAN QUANTITIES """
 ####################################################################################################################
@@ -30,37 +30,50 @@ def plot_sensitivity(dfPlot, param, plot):
     Plots max tip deflection and average power vs. varied parameter
 
     """
-    ax1 = plt.subplot(211)  #, figsize=(8.5, 11))  # (6.4,4.8)
+    ax1 = plt.subplot(311)  #, figsize=(8.5, 11))  # (6.4,4.8)
     color = 'tab:orange'
-    ax1.plot(dfPlot[param], dfPlot['Tip Deflection'], '-o', color=color)  #, output channel is something like 'TipTDxr' label='max out of plane blade tip deflection')
+    ax1.plot(dfPlot[param], dfPlot['Tip Deflection'], '-o', color=color)  # output channel is something like 'TipTDxr' label='max out of plane blade tip deflection')
     ax1.grid()
     ax1.set_ylabel('Tip deflection [m]', color=color)
     ax1.tick_params(direction='in', axis='y', labelcolor=color)
 
     ax2 = ax1.twinx()
     color = 'tab:blue'
-    ax2.plot(dfPlot[param], dfPlot['Average Power'], '-o', color=color) #, label='average power output [kW]')
+    ax2.plot(dfPlot[param], dfPlot['Average Power'], '-o', color=color)  # label='average power output [kW]')
     ax2.set_ylabel('Average power [kW]', color=color)
     ax2.tick_params(direction='in', axis='y', labelcolor=color)
 
-    ax3 = plt.subplot(212)  #, figsize=(8.5, 11))
+    ax3 = plt.subplot(312)  #, figsize=(8.5, 11))
     ax3.grid()
     color = 'tab:green'
-    ax3.plot(dfPlot[param], dfPlot['Blade root moment DEL']/1000, '-o', color=color) #, label='average power output [kW]')
-    ax3.set_ylabel('Blade root moment DEL [kN-m]', color=color)
+    ax3.plot(dfPlot[param], dfPlot['Blade root flap moment DEL']/1000, '-o', color=color)  # label='average power output [kW]')
+    ax3.set_ylabel('Blade root flap moment DEL [kN-m]', color=color)
     ax3.tick_params(direction='in', axis='y', labelcolor=color)
-    if param == 'mass':
-        ax3.set_xlabel('Joint ' + param + ' [kg]')
-    elif param == 'location':
-        ax3.set_xlabel('Joint ' + param + ' [span]')
-    else:
-        ax3.set_xlabel('Joint ' + param + ' multiplier')
 
     ax4 = ax3.twinx()
     color = 'tab:red'
-    ax4.plot(dfPlot[param], dfPlot['Tower base moment DEL'], '-o', color=color) #, label='average power output [kW]')
-    ax4.set_ylabel('Tower base moment DEL [kN-m]', color=color)
+    ax4.plot(dfPlot[param], dfPlot['Blade root edge moment DEL'] / 1000, '-o', color=color)  # label='average power output [kW]')
+    ax4.set_ylabel('Blade root edge moment DEL [kN-m]', color=color)
     ax4.tick_params(direction='in', axis='y', labelcolor=color)
+
+    ax5 = plt.subplot(313)  # , figsize=(8.5, 11))
+    ax5.grid()
+    color = 'tab:purple'
+    ax5.plot(dfPlot[param], dfPlot['Tower base fore-aft moment DEL'], '-o',
+             color=color)  # label='average power output [kW]')
+    ax5.set_ylabel('Tower base fore-aft moment DEL [kN-m]', color=color)
+    ax5.tick_params(direction='in', axis='y', labelcolor=color)
+    if param == 'mass':
+        ax5.set_xlabel('Joint ' + param + ' [kg]')
+    elif param == 'location':
+        ax5.set_xlabel('Joint ' + param + ' [span]')
+    else:
+        ax5.set_xlabel('Joint ' + param + ' multiplier')
+
+    # ax4.plot(dfPlot[param], dfPlot['Tower base fore-aft moment DEL'], '-o', color=color)  # label='average power output [kW]')
+    # ax4.set_ylabel('Tower base fore-aft moment DEL [kN-m]', color=color)
+    # ax4.tick_params(direction='in', axis='y', labelcolor=color)
+
 
     remove_chartjunk(ax1, ['top', 'right'])
     # ax1.legend(loc='best')
@@ -68,7 +81,7 @@ def plot_sensitivity(dfPlot, param, plot):
         plt.show()
         plt.close()
     elif plot == 2:
-        plot_name = "PostPro/" + param+"4.pdf"
+        plot_name = "PostPro/" + param+"5.pdf"
         plt.savefig(plot_name, bbox_inches='tight')
 
 def prob_WindDist(turbine_class, windspeed, disttype="pdf"):
@@ -172,6 +185,8 @@ def run_study(param, values, DLCs):
     pwr = np.empty([len(DLC11), len(values)])  #[DLC1.1 x Values] array. kinda hacky, but can't use DLC 1.3 for this. Sorry.
     DEL_TBMy = np.empty([len(DLC11), len(values)])
     DEL_BRMy = np.empty([len(DLC11), len(values)])
+    DEL_BRMx = np.empty([len(DLC11), len(values)])
+    # TODO add BRMx DEL, has larger peak/trough amplitude and sometimes larger max value
     i = 0
     for val in values:
         Files = []
@@ -181,26 +196,24 @@ def run_study(param, values, DLCs):
             filename = os.path.join(work_dir, case + '.outb')
             Files.append(filename)
             tsDf = io.fast_output_file.FASTOutputFile(filename).toDataFrame()
-            tsDf = tsDf[['TwrBsMyt_[kN-m]', 'B1RootMyr_[N-m]']]  # TODO twrbsMYt
+            tsDf = tsDf[['TwrBsMyt_[kN-m]', 'B1RootMyr_[N-m]', 'B1RootMxr_[N-m]']]
             ts = tsDf.to_numpy()
             ts = ts[1000:, :]
             DEL_TBMy[j, i] = compute_del(ts[:, 0], 3, 600)
             DEL_BRMy[j, i] = compute_del(ts[:, 1], 3, 600)
+            DEL_BRMx[j, i] = compute_del(ts[:, 2], 3, 600)
             j += 1
         print(Files)
         avgDf = fastlib.averagePostPro(Files, avgMethod='constantwindow', avgParam=None, ColMap={'WS_[m/s]':'Wind1VelX_[m/s]'})
         avgDf = avgDf['GenPwr_[kW]']
         pwr[:, i] = avgDf.to_numpy()
         i += 1
-    # TODO pietro sent a weibul thing. use this to calculate average power.
-    # later moment: TODO use fatpack to turn each column, with genpwr for whatever value param, into a single value
-    # dfPwr = pd.DataFrame(data=pwr, index=DLCs[:-2])
-    # dfAvg.insert(0, param, values)
     wind_prob = prob_WindDist(3, [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 25])
     cum = sum(wind_prob)
     avgPwr = np.matmul(wind_prob, pwr)
     avg_DEL_TBMy = np.matmul(wind_prob, DEL_TBMy)
     avg_DEL_BRMy = np.matmul(wind_prob, DEL_BRMy)
+    avg_DEL_BRMx = np.matmul(wind_prob, DEL_BRMx)
 
     # find extreme out of plane tip deflection in extreme conditions
     maxTipDefl=[]
@@ -212,13 +225,13 @@ def run_study(param, values, DLCs):
         tipDeflection2 = dfTs['B2TipTDxr_[m]']
         tipDeflection3 = dfTs['B3TipTDxr_[m]']
         maxTipDefl.append(max(max(tipDeflection1), max(tipDeflection2), max(tipDeflection3)))
-        #header = dfTs.head()
     dfPlot = pd.DataFrame() #data=pwr, index=DLCs[:-2])
     dfPlot[param] = values
     dfPlot['Tip Deflection'] = maxTipDefl
     dfPlot['Average Power'] = avgPwr
-    dfPlot['Blade root moment DEL'] = avg_DEL_BRMy
-    dfPlot['Tower base moment DEL'] = avg_DEL_TBMy
+    dfPlot['Blade root flap moment DEL'] = avg_DEL_BRMy
+    dfPlot['Blade root edge moment DEL'] = avg_DEL_BRMx
+    dfPlot['Tower base fore-aft moment DEL'] = avg_DEL_TBMy
 
     plot_sensitivity(dfPlot, param, 2)
 

@@ -158,7 +158,7 @@ study3 = {'EDmat': EDmat3, 'BDmat': BDmat3, 'parameter': 'stiffness',  'values':
 
 """Study 4: location sensitivity    """
 L_segment = 3.54573  # m
-m_70 = 1000 / L_segment  # kg/m3, at 70% span
+m_70 = 623.06 / L_segment  # kg/m3, at 70% span
 slope = m_70/0.3
 m0 = slope
 span = EDmat[:, 0]
@@ -166,7 +166,8 @@ span = EDmat[:, 0]
 # mpoly = np.array([51497, -199850, 291941, -181858, 30191, 8080])  # assuming =1000 at 69% span
 m_add = []
 for i in span:
-    m_add.append(51497*i**5 + -199850*i**4 + 291941*i**3 + -181858*i**2 + 30191*i + 8080)
+    # m_add.append(51497*i**5 + -199850*i**4 + 291941*i**3 + -181858*i**2 + 30191*i + 8080)
+    m_add.append(8064.5*i**3 + -14704*i**2 + 5547.8*i + 1141)
 m_add = np.asarray(m_add)
 m_add /= L_segment
 first = 6

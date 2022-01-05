@@ -16,6 +16,7 @@ colors=pl.cm.tab20b(np.linspace(0,1,10))
 plt.rc("font", family="serif")
 plt.rc("font", size=8)
 plt.rc("lines", lw=1)
+plt.rc("lines", markersize=4)
 
 """ PLOTTING MEAN QUANTITIES """
 ####################################################################################################################
@@ -183,7 +184,7 @@ def plot_sensitivity_norm(dfPlot, param, plot):
         plt.show()
         plt.close()
     elif plot == 2:
-        plot_name = "PostPro/" + param + "_norm.pdf"
+        plot_name = "PostPro/normalized/" + param + "_norm.pdf"
         plt.savefig(plot_name, bbox_inches='tight')
 
 def prob_WindDist(turbine_class, windspeed, disttype="pdf"):
@@ -289,7 +290,6 @@ def run_study(param, values, DLCs):
     DEL_TBMx = np.empty([len(DLC11), len(values)])
     DEL_BRMy = np.empty([len(DLC11), len(values)])
     DEL_BRMx = np.empty([len(DLC11), len(values)])
-    # TODO add BRMx DEL, has larger peak/trough amplitude and sometimes larger max value
     i = 0
     for val in values:
         Files = []
@@ -344,7 +344,7 @@ def run_study(param, values, DLCs):
 if __name__ == "__main__":
 
 
-    study = study4
+    study = study2
     run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
     # study = study2
     # run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])

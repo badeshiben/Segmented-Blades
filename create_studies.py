@@ -167,7 +167,7 @@ span = EDmat[:, 0]
 m_add = []
 for i in span:
     # m_add.append(51497*i**5 + -199850*i**4 + 291941*i**3 + -181858*i**2 + 30191*i + 8080)
-    m_add.append(8064.5*i**3 + -14704*i**2 + 5547.8*i + 1141)
+    m_add.append(12352*i**3 + -25135*i**2 + 9925.5*i + 2380.7)
 m_add = np.asarray(m_add)
 m_add /= L_segment
 first = 6

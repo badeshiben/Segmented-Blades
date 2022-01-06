@@ -13,5 +13,5 @@ module purge
 ml conda comp-intel intel-mpi mkl
 module unload gcc
 
-/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.31_DLC1.1_U16.fst 
+/home/banderso2/BAR/segmented_blades/openfast/build/glue-codes/openfast/openfast location0.31_DLC1.1_U16.fst
 wait

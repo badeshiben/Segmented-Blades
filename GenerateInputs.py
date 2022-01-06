@@ -112,7 +112,7 @@ def createSubmit(fastfiles, FAST_EXE, npf):
 
 if __name__=='__main__':
     # --- "Global" Parameters for this script
-    study = study4
+    study = study2
     ref_dir          = 'BAR_USC_template/'  # Folder where the fast input files are located (will be copied)
     main_file        = 'BAR_USC.fst'    # Main file in ref_dir, used as a template
     work_dir         = 'BAR_USC_inputs/'+study['parameter']+'/'          # Output folder (will be created)

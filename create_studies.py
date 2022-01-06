@@ -76,7 +76,8 @@ study1 = {'EDmat': EDmat1, 'BDmat': BDmat1, 'parameter': 'mass', 'values': value
 """Study 2: inertia sensitivity    """
 num = 10
 ix = np.linspace(1, 5.5, num=num)
-mx = np.ones(num)
+m_add = 1294 / L_segment  # kg/m3
+mx = np.ones(num) * (m_add + mi)/mi
 kx = np.ones(num)
 
 EDmat2 = np.repeat(EDmat[:, :, np.newaxis], num, axis=2)
@@ -118,8 +119,9 @@ study2 = {'EDmat': EDmat2, 'BDmat': BDmat2, 'parameter': 'inertia', 'values': ix
 # num = 4
 kx = np.array([0.2, 0.4, 0.6, 0.8, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0])
 num = len(kx)
-mx = np.ones(num)
-ix = np.ones(num)
+m_add = 1294 / L_segment  # kg/m3
+mx = np.ones(num) * (m_add + mi)/mi
+ix = mx
 
 EDmat3 = np.repeat(EDmat[:, :, np.newaxis], num, axis=2)
 BDmat3 = np.repeat(BDmat[:, :, np.newaxis], num, axis=2)

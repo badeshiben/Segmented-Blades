@@ -344,14 +344,14 @@ def run_study(param, values, DLCs):
 if __name__ == "__main__":
 
 
-    study = study2
-    run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
+    # study = study2
+    # run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
     # study = study2
     # run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
     # study = study3
     # run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
-    # study = study4
-    # run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
+    study = study4
+    run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
 
 
 

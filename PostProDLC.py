@@ -339,14 +339,15 @@ def run_study(param, values, DLCs):
     dfPlot['Tower base fore-aft moment DEL'] = avg_DEL_TBMy
     dfPlot['Tower base side-side moment DEL'] = avg_DEL_TBMx
 
-    plot_sensitivity_norm(dfPlot, param, 2)
+    plot_sensitivity_raw(dfPlot, param, 1)
+    # plot_sensitivity_norm(dfPlot, param, 2)
 
 if __name__ == "__main__":
 
 
-    study = study2
-    run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
-    study = study3
+    # study = study2
+    # run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
+    study = study1
     run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
     # study = study3
     # run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])

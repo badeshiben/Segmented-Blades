@@ -65,12 +65,22 @@ joint_cost_adder =  [4901, 4901, 4221, 3583, 2805, 1929, 1104, 405]
 sc_joint_cost = sc_joint_mass * 20.08  # CF uni cost
 joint_cost_tot = joint_cost_adder + sc_joint_cost
 print(joint_mass_tot)
+joint_nonmat_cost = 104*tip_length+19811
 blade_mass =        np.array([52304, 52001, 51570, 50970, 50348, 49646, 48987, 48588])
 blade_cost =        np.array([533060, 528418, 520368, 514334, 505774, 496116, 486404, 479875])
 turbine_mass =      np.array([1211212, 1210501, 1209331, 1207460, 1205448, 1203040, 1200586, 1198908])
 turbine_cost =      np.array([7664081, 7648855, 7622320, 7599978, 7569540, 7526300, 7499187, 7475051])
 LCOE =              np.array([37.09, 37.04, 36.96, 36.89, 36.79, 36.66, 36.58, 36.50])
 turbine_cost_kW =   turbine_cost/5e3
+joint_cost_tot = joint_cost_tot + joint_nonmat_cost - 10000 #- 28600
+blade_cost = blade_cost + joint_nonmat_cost - 28600
+x = joint_nonmat_cost - 10000
+joint_cost_fraction = np.divide(x, blade_cost)
+LCOE_change = (joint_nonmat_cost - 28600)/10000*0.109
+LCOE_adj = LCOE + LCOE_change
+LCOE_nonmat = (joint_nonmat_cost - 10000)/10000*0.109
+turbine_cost_adj = turbine_cost + 3*(joint_nonmat_cost - 28600)
+turbine_cost_kW_adj =   turbine_cost_adj/5e3
 
 
 # TODO scale updated sc mass adder with change in joint mass adder so that you don't have to run SW again
@@ -84,7 +94,7 @@ plt.rc("font", size=8)
 plt.rc("lines", lw=1)
 plt.rc("lines", markersize=4)
 
-plot = 2
+plot = 1
 
 fig, ax = plt.subplots(2, 1, sharey=False, sharex=False, figsize=(3.2, 3.5))
 color = 'tab:orange'
@@ -114,7 +124,7 @@ ax[1].plot(joint_loc, joint_cost_tot/1000, '-o', color=color)
 ax[1].grid()
 ax[1].set_ylabel('Joint cost [k$]', color=color)
 ax[1].tick_params(direction='in', axis='y', labelcolor=color)
-ax[1].set_ylim(0, 65)
+ax[1].set_ylim(0, 80)
 ax[1].set_xlim(18, 92)
 ax[1].xaxis.set_ticks(joint_loc.tolist())
 
@@ -123,7 +133,7 @@ color = 'tab:green'
 ax3.plot(joint_loc, blade_cost/1000, '-o', color=color)
 ax3.set_ylabel('Blade cost [k$]', color=color)
 ax3.tick_params(direction='in', axis='y', labelcolor=color)
-ax3.set_ylim(476, 541)
+ax3.set_ylim(458, 538)
 ax3.set_xlim(18, 92)
 # ax[2].grid()
 # color = 'tab:purple'

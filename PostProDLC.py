@@ -102,7 +102,7 @@ def plot_sensitivity_raw(dfPlot, param, plot):
         plot_name = "PostPro/" + param+".pdf"
         plt.savefig(plot_name, bbox_inches='tight')
 
-def plot_sensitivity_norm(dfPlot, param, plot):
+def plot_sensitivity_norm_mass(dfPlot, param, plot):
     """
     Parameters
     ----------
@@ -117,18 +117,21 @@ def plot_sensitivity_norm(dfPlot, param, plot):
     fig, ax = plt.subplots(3, 1, sharey=False, sharex=True, figsize=(3, 5))
     # fig.set_size_inches(4, 10)# , figsize=(8.5, 11))  # (6.4,4.8)
     color = 'tab:orange'
+    # ax[0].grid()
     ax[0].plot(dfPlot[param], dfPlot['Tip Deflection']/dfPlot['Tip Deflection'][0], '-o',
              color=color)  # output channel is something like 'TipTDxr' label='max out of plane blade tip deflection')
     ax[0].grid()
     ax[0].set_ylabel('Tip deflection', color=color)
+    ax[0].set_ylim(0.905, 1.005)
     ax[0].tick_params(direction='in', axis='y', labelcolor=color)
 
     ax2 = ax[0].twinx()
-    color = 'tab:blue'
-    ax2.plot(dfPlot[param], dfPlot['Average Power']/dfPlot['Average Power'][0], '-o',
-             color=color)  # label='average power output [kW]')
-    ax2.set_ylabel('AEP', color=color)
-    ax2.tick_params(direction='in', axis='y', labelcolor=color)
+    ax2.axes.yaxis.set_visible(False)
+    # color = 'tab:blue'
+    # ax2.plot(dfPlot[param], dfPlot['Average Power']/dfPlot['Average Power'][0], '-o',
+    #          color=color)  # label='average power output [kW]')
+    # ax2.set_ylabel('AEP', color=color)
+    # ax2.tick_params(direction='in', axis='y', labelcolor=color)
 
     ax[1].grid()
     color = 'tab:green'
@@ -137,6 +140,7 @@ def plot_sensitivity_norm(dfPlot, param, plot):
     ax[1].plot(dfPlot[param], dfPlot['Blade root flap moment DEL']/dfPlot['Blade root flap moment DEL'][0], '-o',
                color=color)
     ax[1].set_ylabel(label, color=color)
+    ax[1].set_ylim(0.995, 1.095)
     ax[1].tick_params(direction='in', axis='y', labelcolor=color)
 
     ax3 = ax[1].twinx()
@@ -146,6 +150,7 @@ def plot_sensitivity_norm(dfPlot, param, plot):
     ax3.plot(dfPlot[param], dfPlot['Blade root edge moment DEL']/dfPlot['Blade root edge moment DEL'][0], '-o',
              color=color)  # label='average power output [kW]')
     ax3.set_ylabel(label, color=color)
+    ax3.set_ylim(0.995, 1.095)
     ax3.tick_params(direction='in', axis='y', labelcolor=color)
 
     ax[2].grid()
@@ -155,6 +160,7 @@ def plot_sensitivity_norm(dfPlot, param, plot):
     ax[2].plot(dfPlot[param], dfPlot['Tower base fore-aft moment DEL']/dfPlot['Tower base fore-aft moment DEL'][0], '-o',
                color=color)  # label='average power output [kW]')
     ax[2].set_ylabel(label, color=color)
+    ax[2].set_ylim(0.995, 1.095)
     ax[2].tick_params(direction='in', axis='y', labelcolor=color)
 
     ax6 = ax[2].twinx()
@@ -164,8 +170,187 @@ def plot_sensitivity_norm(dfPlot, param, plot):
     ax6.plot(dfPlot[param], dfPlot['Tower base side-side moment DEL']/dfPlot['Tower base side-side moment DEL'][0], '-o',
              color=color)  # label='average power output [kW]')
     ax6.set_ylabel(label, color=color)
+    ax6.set_ylim(0.905, 1.005)
     ax6.tick_params(direction='in', axis='y', labelcolor=color)
 
+
+    if param == 'mass':
+        ax[2].set_xlabel('Joint ' + param + ' [kg]')
+    elif param == 'location':
+        ax[2].set_xlabel('Joint ' + param + ' [span]')
+    else:
+        ax[2].set_xlabel('Joint ' + param + ' multiplier')
+
+    # ax4.plot(dfPlot[param], dfPlot['Tower base fore-aft moment DEL'], '-o', color=color)  # label='average power output [kW]')
+    # ax4.set_ylabel('Tower base fore-aft moment DEL [kN-m]', color=color)
+    # ax4.tick_params(direction='in', axis='y', labelcolor=color)
+
+    remove_chartjunk(ax[0], ['top', 'right'])
+    # ax1.legend(loc='best')
+    if plot == 1:
+        plt.show()
+        plt.close()
+    elif plot == 2:
+        plot_name = "PostPro/normalized/" + param + "_norm.pdf"
+        plt.savefig(plot_name, bbox_inches='tight')
+
+def plot_sensitivity_norm_stiffness(dfPlot, param, plot):
+    """
+    Parameters
+    ----------
+    dfPlot:     dataframe to plot
+    plot:       plot options. [0, 1, 2] - [no plot, show plot, save plot]
+
+    Returns
+    -------
+    Plots normalized max tip deflection, average power, BRMs, TBMs vs. varied parameter
+
+    """
+    fig, ax = plt.subplots(2, 1, sharey=False, sharex=True, figsize=(3, 3.4))
+    # fig.set_size_inches(4, 10)# , figsize=(8.5, 11))  # (6.4,4.8)
+    color = 'tab:orange'
+    ax[0].plot(dfPlot[param], dfPlot['Tip Deflection']/dfPlot['Tip Deflection'][0], '-o',
+             color=color)  # output channel is something like 'TipTDxr' label='max out of plane blade tip deflection')
+    ax[0].grid()
+    ax[0].set_ylabel('Tip deflection', color=color)
+    ax[0].set_ylim(0.905, 1.005)
+    ax[0].tick_params(direction='in', axis='y', labelcolor=color)
+
+    # ax2 = ax[0].twinx()
+    # color = 'tab:blue'
+    # ax2.plot(dfPlot[param], dfPlot['Average Power']/dfPlot['Average Power'][0], '-o',
+    #          color=color)  # label='average power output [kW]')
+    # ax2.set_ylabel('AEP', color=color)
+    # ax2.tick_params(direction='in', axis='y', labelcolor=color)
+
+    ax2 = ax[0].twinx()
+    color = 'tab:green'
+    label = 'Blade root flap moment DEL'
+    label = textwrap.fill(label, width=20)
+    ax2.plot(dfPlot[param], dfPlot['Blade root flap moment DEL']/dfPlot['Blade root flap moment DEL'][0], '-o',
+               color=color)
+    ax2.set_ylabel(label, color=color)
+    ax2.set_ylim(0.995, 1.095)
+    ax2.tick_params(direction='in', axis='y', labelcolor=color)
+
+    # ax3 = ax[1].twinx()
+    # color = 'tab:red'
+    # label = 'Blade root edge moment DEL'
+    # label = textwrap.fill(label, width=20)
+    # ax3.plot(dfPlot[param], dfPlot['Blade root edge moment DEL']/dfPlot['Blade root edge moment DEL'][0], '-o',
+    #          color=color)  # label='average power output [kW]')
+    # ax3.set_ylabel(label, color=color)
+    # ax3.set_ylim(0.995, 1.095)
+    # ax3.tick_params(direction='in', axis='y', labelcolor=color)
+
+    ax[1].grid()
+    color = 'tab:purple'
+    label = 'Tower base fore-aft moment DEL'
+    label = textwrap.fill(label, width=20)
+    ax[1].plot(dfPlot[param], dfPlot['Tower base fore-aft moment DEL']/dfPlot['Tower base fore-aft moment DEL'][0], '-o',
+               color=color)  # label='average power output [kW]')
+    ax[1].set_ylabel(label, color=color)
+    ax[1].set_ylim(0.995, 1.095)
+    ax[1].tick_params(direction='in', axis='y', labelcolor=color)
+
+    ax6 = ax[1].twinx()
+    color = 'tab:gray'
+    label = 'Tower base side-side moment DEL'
+    label = textwrap.fill(label, width=20)
+    ax6.plot(dfPlot[param], dfPlot['Tower base side-side moment DEL']/dfPlot['Tower base side-side moment DEL'][0], '-o',
+             color=color)  # label='average power output [kW]')
+    ax6.set_ylabel(label, color=color)
+    ax6.set_ylim(0.995, 1.095)
+    ax6.tick_params(direction='in', axis='y', labelcolor=color)
+    ax[1].set_xlabel('Joint ' + param + ' multiplier')
+
+    # ax4.plot(dfPlot[param], dfPlot['Tower base fore-aft moment DEL'], '-o', color=color)  # label='average power output [kW]')
+    # ax4.set_ylabel('Tower base fore-aft moment DEL [kN-m]', color=color)
+    # ax4.tick_params(direction='in', axis='y', labelcolor=color)
+
+    remove_chartjunk(ax[0], ['top', 'right'])
+    # ax1.legend(loc='best')
+    if plot == 1:
+        plt.show()
+        plt.close()
+    elif plot == 2:
+        plot_name = "PostPro/normalized/" + param + "_norm.pdf"
+        plt.savefig(plot_name, bbox_inches='tight')
+
+def plot_sensitivity_norm_location(dfPlot, param, plot):
+    """
+    Parameters
+    ----------
+    dfPlot:     dataframe to plot
+    plot:       plot options. [0, 1, 2] - [no plot, show plot, save plot]
+
+    Returns
+    -------
+    Plots normalized max tip deflection, average power, BRMs, TBMs vs. varied parameter
+
+    """
+    fig, ax = plt.subplots(3, 1, sharey=False, sharex=True, figsize=(3, 5))
+    # fig.set_size_inches(4, 10)# , figsize=(8.5, 11))  # (6.4,4.8)
+    color = 'tab:orange'
+    ax[0].plot(dfPlot[param], dfPlot['Tip Deflection'] / dfPlot['Tip Deflection'][0], '-o',
+               color=color)  # output channel is something like 'TipTDxr' label='max out of plane blade tip deflection')
+    ax[0].grid()
+    ax[0].set_ylabel('Tip deflection', color=color)
+    ax[0].set_ylim(0.92, 1.02)
+    ax[0].tick_params(direction='in', axis='y', labelcolor=color)
+
+    ax2 = ax[0].twinx()
+    ax2.axes.yaxis.set_visible(False)
+    # color = 'tab:blue'
+    # ax2.plot(dfPlot[param], dfPlot['Average Power']/dfPlot['Average Power'][0], '-o',
+    #          color=color)  # label='average power output [kW]')
+    # ax2.set_ylabel('AEP', color=color)
+    # ax2.tick_params(direction='in', axis='y', labelcolor=color)
+
+    ax[1].grid()
+    color = 'tab:green'
+    label = 'Blade root flap moment DEL'
+    label = textwrap.fill(label, width=20)
+    ax[1].plot(dfPlot[param], dfPlot['Blade root flap moment DEL'] / dfPlot['Blade root flap moment DEL'][0],
+               '-o',
+               color=color)
+    ax[1].set_ylabel(label, color=color)
+    ax[1].set_ylim(0.96, 1.06)
+    ax[1].tick_params(direction='in', axis='y', labelcolor=color)
+    # ax[1].xticks([0.96, 0.98, 1.00, 1.02, 1.04])
+
+    ax3 = ax[1].twinx()
+    color = 'tab:red'
+    label = 'Blade root edge moment DEL'
+    label = textwrap.fill(label, width=20)
+    ax3.plot(dfPlot[param], dfPlot['Blade root edge moment DEL'] / dfPlot['Blade root edge moment DEL'][0],
+             '-o',
+             color=color)  # label='average power output [kW]')
+    ax3.set_ylabel(label, color=color)
+    ax3.set_ylim(0.96, 1.06)
+    ax3.tick_params(direction='in', axis='y', labelcolor=color)
+
+    ax[2].grid()
+    color = 'tab:purple'
+    label = 'Tower base fore-aft moment DEL'
+    label = textwrap.fill(label, width=20)
+    ax[2].plot(dfPlot[param],
+               dfPlot['Tower base fore-aft moment DEL'] / dfPlot['Tower base fore-aft moment DEL'][0], '-o',
+               color=color)  # label='average power output [kW]')
+    ax[2].set_ylabel(label, color=color)
+    ax[2].set_ylim(0.985, 1.095)
+    ax[2].tick_params(direction='in', axis='y', labelcolor=color)
+
+    ax6 = ax[2].twinx()
+    color = 'tab:gray'
+    label = 'Tower base side-side moment DEL'
+    label = textwrap.fill(label, width=20)
+    ax6.plot(dfPlot[param],
+             dfPlot['Tower base side-side moment DEL'] / dfPlot['Tower base side-side moment DEL'][0], '-o',
+             color=color)  # label='average power output [kW]')
+    ax6.set_ylabel(label, color=color)
+    ax6.set_ylim(0.985, 1.095)
+    ax6.tick_params(direction='in', axis='y', labelcolor=color)
 
     if param == 'mass':
         ax[2].set_xlabel('Joint ' + param + ' [kg]')
@@ -329,7 +514,7 @@ def run_study(param, values, DLCs):
         tipDeflection1 = dfTs['B1TipTDxr_[m]']
         tipDeflection2 = dfTs['B2TipTDxr_[m]']
         tipDeflection3 = dfTs['B3TipTDxr_[m]']
-        maxTipDefl.append(max(max(tipDeflection1), max(tipDeflection2), max(tipDeflection3)))
+        maxTipDefl.append(min(min(tipDeflection1), min(tipDeflection2), min(tipDeflection3)))
     dfPlot = pd.DataFrame() #data=pwr, index=DLCs[:-2])
     dfPlot[param] = values
     dfPlot['Tip Deflection'] = maxTipDefl
@@ -339,20 +524,20 @@ def run_study(param, values, DLCs):
     dfPlot['Tower base fore-aft moment DEL'] = avg_DEL_TBMy
     dfPlot['Tower base side-side moment DEL'] = avg_DEL_TBMx
 
-    plot_sensitivity_raw(dfPlot, param, 1)
-    # plot_sensitivity_norm(dfPlot, param, 2)
+    # plot_sensitivity_raw(dfPlot, param, 1)
+    plot_sensitivity_norm_location(dfPlot, param, 2)
 
 if __name__ == "__main__":
 
 
     # study = study2
     # run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
-    study = study1
-    run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
+    # study = study1
+    # run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
     # study = study3
     # run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
-    # study = study4
-    # run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
+    study = study4
+    run_study(param=study['parameter'], values=study['values'], DLCs=study['DLC'])
 
 
 
